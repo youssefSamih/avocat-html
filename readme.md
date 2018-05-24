@@ -1,6 +1,7 @@
 ## GULP STARTER WITH GENERATORS AND TRANSLATIONS
 
 A Fleet Management System (FMS)
+- AUTOMATICALLY AND EASILLY GENERATE COMPONENTS, BASED ON ATOMIC DESIGN LOGIC: ***Element > Fragment > Lame > Page***.
 
 
 ![Screenshot](screen.png)
@@ -38,7 +39,7 @@ git clone  https://git.smile.fr/smile-maroc-montage/GulpStarter.git
 ##### 2 - Go to directory path:
 
 ```
-cd EuroQuity
+cd GulpStarter
 ```
 
 ##### 3 - Install dependencies using:
@@ -54,8 +55,6 @@ gulp
 ```
 
 ## Generating components *(NEW)*
-- AUTOMATICALLY AND EASILLY GENERATE COMPONENTS, BASED ON ATOMIC DESIGN LOGIC: ***Element > Fragment > Lame > Page***.
-
 The new feature added is the ability te generate components via command line
 
  * gulp ***generate*** **--element** {{ name }}
