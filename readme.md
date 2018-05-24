@@ -106,11 +106,14 @@ $(document).ready(function () {
 ```
 ### 1 - Generating HTML / SCSS FILES
 * Only ***elements***, ***fragments*** and ***lames*** can add SCSS Files ***not pages and layouts***
+
 ```
 gulp generate --element myElement
 gulp generate --fragment myFragment
 gulp generate --lame myLame
+
 ```
+
 * While executing one of these commands:
     * it generates a ***twig*** file under ***app/views/fragments , elements or lames*** folder (depending on what you generated).
     * it generates a ***scss*** file under ***app/scss/fragments , elements or lames*** folder (depending on what you generated).
@@ -119,11 +122,14 @@ gulp generate --lame myLame
 ```
   gulp generate --page myPage
   gulp generate --layout myLayout
+  
 ```
 * While executing one of these commands:
     * it generates a ***twig*** file under ***app/views/pages , layout*** folder, with ***Twig*** content (depending on what you generated) like folowing:
     * ***PS: NO SCSS file generated***
+    
 ```
+
 {% extends "../layout/skeleton.twig" %}
 {% block title %}
 Home
@@ -131,10 +137,15 @@ Home
 {% block main %}
 page : Home
 {% endblock %}
+
 ```
+
 ## Translations i18n
+
 ***(Docs Coming soon)*** 
+
 ## APP Folder Structure
+
 ##### 1 - JS FILES
 ***1.1 - app/js/vendor*** :  Contains all third-Party libraries (Bootstrap, fancybox, animate, etc...) Scripts.
 
@@ -171,6 +182,7 @@ The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
 ***dist/assets*** :  Contains all CSS(*.css & *.min.css), JS(*.js & *.min.js), IMGS, FONTS.
 
 ***dist/xxx.html*** : Contains all compiled ***Twig*** files to ***HTML***.
+
 ## Built With
 
 * [GulpJS](https://gulpjs.com/) - Workflow Automation :
