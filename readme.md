@@ -1,14 +1,14 @@
-# GULP STARTER
+## GULP STARTER WITH GENERATORS AND TRANSLATIONS
 
 A Fleet Management System (FMS)
+![Screenshot](screen.png)
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-*You can avoid installing dependencies and all stuff by going under  ***dist*** folder and open the ***index.html*** file to view content.*
 
-**But if you want to edit files you should follow instructions below**
+**if you want to edit / create files you should follow instructions below**
 ### Prerequisites
 
 What things you need to install the software and how to install them.
@@ -52,57 +52,92 @@ gulp
 ```
 
 ## Generating components *(NEW)*
-### 1 - JS FILES
+- AUTOMATICALLY AND EASILLY GENERATE COMPONENTS, BASED ON ATOMIC DESIGN LOGIC: ***Element > Fragment > Lame > Page***.
 
-## Built With
+The new feature added is the ability te generate components via command line
 
-* [GulpJS](https://gulpjs.com/) - Workflow Automation
-    * [GULP TWIG](/) - HTML BUILD
-    * [CSS LINTER]() - CSS validator
-    * [AUTOP REFIXER]() - Adding prefixes to some CSS attributes (CrossBrowserSupport) 
-    * [BROWSER SYNC]() - Auto refresh content while making changes on HTML, CSS, JS files from ***App*** folder
-    * [JS HINT]() - JS validator
-* [TWIG](https://gulpjs.com/) - Workflow Automation
-* [Bootstrap 4](https://getbootstrap.com/docs/4.1/getting-started/introduction/) - Toolkit HTML, CSS, JS developpement based on FlexBox
-* [jQuery](https://jquery.com) - Javascript Library
-* [jQuery Valdiate](https://jqueryvalidation.org/) - Javascript Form validate Library
-* [Fancybox 3](https://www.fancyapps.com/fancybox/3/) - JavaScript lightbox library for presenting various types of media
-* [AcimateCSS](https://daneden.github.io/animate.css/) - Animations
-* [OwlCarousel 2](https://owlcarousel2.github.io/OwlCarousel2/) - Carousel sliders
-* [Scroll reveal](https://scrollrevealjs.org/) - Easy scroll animations for web and mobile browsers.
+ * gulp ***generate*** **--element** {{ name }}
+ * gulp ***generate*** **--fragment** {{ name }}
+ * gulp ***generate*** **--lame** {{ name }}
+ * gulp ***generate*** **--page** {{ name }}
+ * gulp ***generate*** **--layout** {{ name }}
+ * gulp ***generate*** **--js** {{ name }}
 
-## How it works
-##### 1 - JS FILES
-File ***app/js/custom/scripts.js*** is the entry point of all js calls, open file and you can see :
+### 1 - Generating JS FILES
 ```
- ICN.init.init();
+gulp generate --js myJs
 ```
-*which **ICN** is the namespace used to call all JS customs scripts*
-
-***1.1 - ADD / EDIT***
-
-To **ADD / EDIT** a JS script, go under ***app/js/fragments*** create or edit your scripts
-
-***1.2 - CREATE NEW SCRIPT***
-
-To create a new JS files you mus do as following: 
+* This command allows you to create  ***"myJs.ks"*** under ***app/js/fragments*** folder, it automatically creates its content like folowing: 
 ```
-ICN.init = {
-  first: function () {
-    console.log('first');
-  },
-  second: function () {
-    console.log('second');
-  }
+/*
+ * myJs Functions
+ * */
+ 
+CJS.myJs = {
+    init: function () {
+        // add your code here
+    }
 };
-```
 
-***1.3 - CALLING METHODS***
+```
+* ***CJS*** is the namespace used to call scripts, you can replace it on ***app/js/confi.json***.
 
- To call a created custom script do as following:
+
+
+* It also adds the call on the ***app/js/custom/scripts.js*** like folowing: 
+* **PS : All generated js files are automatically added to $(document).ready function :**
+
 ```
- Ex : ICN.init.first();
+"use strict";
+    
+var CJS = CJS || {};
+    
+$(document).ready(function () {
+    
+    CJS.myJs.init();
+    CJS.myJs2.init();
+    ...
+});
+
 ```
+### 1 - Generating HTML / SCSS FILES
+* Only ***elements***, ***fragments*** and ***lames*** can add SCSS Files ***not pages and layouts***
+```
+gulp generate --element myElement
+gulp generate --fragment myFragment
+gulp generate --lame myLame
+```
+* While executing one of these commands:
+    * it generates a ***twig*** file under ***app/views/fragments , elements or lames*** folder (depending on what you generated).
+    * it generates a ***scss*** file under ***app/scss/fragments , elements or lames*** folder (depending on what you generated).
+    * ***PS: No need to include files to main.scss, they're automatically included while executing these command lines***
+
+```
+  gulp generate --page myPage
+  gulp generate --layout myLayout
+```
+* While executing one of these commands:
+    * it generates a ***twig*** file under ***app/views/pages , layout*** folder, with ***Twig*** content (depending on what you generated) like folowing:
+    * ***PS: NO SCSS file generated***
+```
+{% extends "../layout/skeleton.twig" %}
+{% block title %}
+Home
+{% endblock %}
+{% block main %}
+page : Home
+{% endblock %}
+```
+## Translations i18n
+***(Docs Coming soon)*** 
+## APP Folder Structure
+##### 1 - JS FILES
+***1.1 - app/js/vendor*** :  Contains all third-Party libraries (Bootstrap, fancybox, animate, etc...) Scripts.
+
+***1.2 - app/js/custom*** :  Contains the Main entry point Scripts.
+
+***1.2 - app/js/fragments*** :  Contains all custom fragments Scripts.
+
 ##### 2 - SCSS FILES
 ***2.1 - app/scss/vendor*** :  Contains all third-Party libraries (Bootstrap, fancybox, animate, etc...) Styles.
 
@@ -125,6 +160,29 @@ ICN.init = {
 ***3.3 - app/views/layout*** :  Contains globl pages layout : skeleton, header & footer .
 
 ***3.4 - app/views/pages*** :  Contains all pages where we include our custom blocs.
+
+## DIST Folder Structure
+The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
+
+***dist/assets*** :  Contains all CSS(*.css & *.min.css), JS(*.js & *.min.js), IMGS, FONTS.
+
+***dist/xxx.html*** : Contains all compiled ***Twig*** files to ***HTML***.
+## Built With
+
+* [GulpJS](https://gulpjs.com/) - Workflow Automation :
+    * [GULP TWIG](/) - HTML BUILD.
+    * [CSS LINTER]() - CSS validator.
+    * [AUTOP REFIXER]() - Adding prefixes CSS3 attributes (Enabling CrossBrowser Support). 
+    * [BROWSER SYNC]() - Auto refresh content while making changes on HTML, CSS, JS files from ***App*** folder.
+    * [JS HINT]() - JS Syntax Validator.
+* [TWIG](https://gulpjs.com/) - Workflow Automation.
+* [Bootstrap 4](https://getbootstrap.com/docs/4.1/getting-started/introduction/) - Toolkit HTML, CSS, JS developpement based on FlexBox.
+* [jQuery](https://jquery.com) - Javascript Library.
+* [jQuery Valdiate](https://jqueryvalidation.org/) - Javascript Form validate Library.
+* [Fancybox 3](https://www.fancyapps.com/fancybox/3/) - JavaScript lightbox library for presenting various types of media.
+* [AcimateCSS](https://daneden.github.io/animate.css/) - Animations.
+* [OwlCarousel 2](https://owlcarousel2.github.io/OwlCarousel2/) - Carousel sliders.
+* [Scroll reveal](https://scrollrevealjs.org/) - Easy scroll animations for web and mobile browsers.
 
 ## Authors
 

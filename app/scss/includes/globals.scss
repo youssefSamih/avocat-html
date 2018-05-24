@@ -70,6 +70,10 @@ input,
 span {
   @include font($global-font-family, map-get($colors, black), $global-font, false, false, false, false, false);
 }
+
+p {
+  margin-bottom: 15px;
+}
 // Lists
 dl, ol, ul {
   margin-top: 0;

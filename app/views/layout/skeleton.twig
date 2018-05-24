@@ -15,7 +15,9 @@
   <body>
     {% include 'header.twig' %}
     <main>
-      {% block main %}{% endblock %}
+      <div class="container">
+        {% block main %}{% endblock %}
+      </div>
     </main>
     {% include 'footer.twig' %}
 

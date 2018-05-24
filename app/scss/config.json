@@ -17,6 +17,7 @@
   },
   "pages": {
     "index": true,
-    "home": true
+    "home": true,
+    "Home": true
   }
 }

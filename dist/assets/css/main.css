@@ -80,6 +80,9 @@ span {
   color: #000;
   font-size: 20px; }
 
+p {
+  margin-bottom: 15px; }
+
 dl, ol, ul {
   margin-top: 0;
   margin-bottom: 0; }
@@ -346,14 +349,16 @@ select,
       color: #fff; }
 
 .block-thumb {
-  border: 1px solid #f8c93e;
-  color: #f8c93e;
-  padding: 20px; }
+  padding: 20px;
+  border: 1px solid #f8c93e; }
+  .block-thumb > * {
+    color: #f8c93e; }
 
 .lame-thumb {
-  border: 1px solid #713611;
-  color: #713611;
-  padding: 20px; }
+  padding: 20px;
+  border: 1px solid #713611; }
+  .lame-thumb > * {
+    color: #713611; }
 
 /*Example @font-face {
   font-family: 'customfont';
