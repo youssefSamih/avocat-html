@@ -12,19 +12,11 @@
 @import './includes/layout/header';
 @import './includes/layout/footer';
 //- Elements files
-@import './includes/elements/form';
-@import './includes/elements/iframe';
-@import './includes/elements/input';
-@import './includes/elements/checkboxes';
-@import './includes/elements/radioboxes';
-@import './includes/elements/select';
-@import './includes/elements/buttons';
+@import 'includes/elements/_elements';
 //- Fragments files
-// Custom fragments calls should be here
-
+@import 'includes/fragments/_fragments';
 //- Lames files
-// Custom lames calls should be here
-
+@import 'includes/lames/_lames';
 //- Overrides
 @import './includes/overrides';
 //- Helpers

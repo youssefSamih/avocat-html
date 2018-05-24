@@ -16,8 +16,11 @@ $input-min-height: 50px;
 
 // Colors
 $colors: (
-  priamry:     #1affa9,
-  secondary:   #b8fff8,
+  // Custom colors, add here :
+  primary:     #713611,
+  secondary:   #f8c93e,
+
+  // Default colors do not remove :
   white:       #fff,
   black:       #000,
   transparent: transparent,

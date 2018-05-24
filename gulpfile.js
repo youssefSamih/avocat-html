@@ -27,6 +27,8 @@ var imgs = {src: appRoot + '/imgs', dest: distRoot + '/assets/imgs'};
 var css = {src: appRoot + '/scss', dest: distRoot + '/assets/css'};
 var js = {src: appRoot + '/js', dest: distRoot + '/assets/js'};
 
+var configSCSSFile = css.src + '/config.json';
+var configJSFile = js.src + '/config.json';
 
 /* 1- Loading all plugins */
 var gulp = require('gulp');
@@ -200,6 +202,196 @@ gulp.task('sync-views', function (done) {
       done(err);
     });
 });
+
+
+/* Generating content */
+
+var options = plugins.minimist(process.argv.slice(2));
+
+gulp.task('generate', function (cb) {
+  var content = "";
+  if (options.element && typeof options.element === "string") { // Generating element
+    plugins.file(options.element + '.scss', '.'+options.element+'\t{\n\n}')
+      .pipe(gulp.dest(css.src + '/includes/elements'));
+
+    plugins.file(options.element + '.twig', 'element')
+      .pipe(gulp.dest(views.src + '/elements'));
+
+    fillSCSSContainer(options.element, 'elements');
+
+  }
+  else if (options.fragment && typeof options.fragment === "string") { // Generating fragment
+    plugins.file(options.fragment + '.scss', '.'+options.fragment+'\t{\n\n}')
+      .pipe(gulp.dest(css.src + '/includes/fragments'));
+
+    plugins.file(options.fragment + '.twig', '<div class="block '+options.fragment+'">\n'+options.fragment+'\n'+'</div>')
+      .pipe(gulp.dest(views.src + '/fragments'));
+
+    fillSCSSContainer(options.fragment, 'fragments');
+  }
+  else if (options.lame && typeof options.lame === "string") { // Generating lame
+    plugins.file(options.lame + '.scss', '.'+options.lame+'\t{\n\n}')
+      .pipe(gulp.dest(css.src + '/includes/lames'));
+
+    plugins.file(options.lame + '.twig', '<section class="lame '+options.lame+'">\n'+options.lame+'\n'+'</section>')
+      .pipe(gulp.dest(views.src + '/lames'));
+
+    fillSCSSContainer(options.lame, 'lames');
+
+  }
+  else if (options.page && typeof options.page === "string") { // Generating page
+    content = '{% extends "../layout/skeleton.twig" %}\n' +
+      '{% block title %}\n' +
+      options.page + '\n' +
+      '{% endblock %}\n' +
+      '{% block main %}\n' +
+      'page : ' + options.page +
+      '{% endblock %}';
+
+    plugins.file(options.page + '.twig', content)
+      .pipe(gulp.dest(views.tpls));
+
+    fillSCSSContainer(options.page , 'pages');
+  }
+  else if (options.layout && typeof options.layout === "string") { // Generating layout
+    plugins.file(options.layout + '.twig', '')
+      .pipe(gulp.dest(views.src + '/layout'));
+  }
+  else if (options.js && typeof options.js === "string") { // Generating layout
+
+    // Append file to config.json
+    plugins.fs.readFile(configJSFile, 'utf8', function (err, data) {
+      var config = JSON.parse(data);
+      if (err) {
+        throw new Error('File error');
+      }
+      else {
+
+        config.fragments[options.js] = true;
+
+        plugins.fs.writeFile(configJSFile, JSON.stringify(config, null, 2), function (err) {
+          if (err) {
+            throw new Error('Cant write file')
+          }
+          else {
+            console.log("Config written successfully");
+            createMainJS(config);
+          }
+        });
+      }
+    });
+  }
+});
+
+function createFragmentJS(config) {
+  // Creation of custom fragments JS
+  for (var i = 0; i < Object.keys(config.fragments).length; i++) {
+    var content = "" +
+      "/*\n" +
+      " * " + Object.keys(config.fragments)[i] + " Functions\n" +
+      " * */\n" +
+      config.namespace + '.' + Object.keys(config.fragments)[i] + " = {\n" +
+      "\tinit: function () {\n" +
+      "\n" +
+      "\t}\n" +
+      "};\n";
+    plugins.file(Object.keys(config.fragments)[i] + '.js', content)
+      .pipe(gulp.dest(js.src + '/fragments'));
+  }
+}
+
+function createMainJS(config) {
+  createFragmentJS(config);
+
+  var content = [];
+
+  if (config.strict) {
+    content.push('"use strict";');
+  }
+
+  if (config.namespace) {
+    content.push("var " + config.namespace + " = " + config.namespace + " || {};");
+  }
+
+  if (config.ready) {
+    content.push("$(document).ready(function () {");
+  }
+
+  if (Object.keys(config.fragments).length) {
+    var scripts = Object.keys(config.fragments).map(function (f, idx) {
+      if (config.fragments[f]) {
+        return "\t" + config.namespace + "." + f + ".init();";
+      }
+
+      return "";
+    }).join("\n");
+
+    content.push(scripts);
+    content.push("});\n");
+  }
+  else {
+    content.push("});\n");
+  }
+
+  plugins.fs.writeFile(js.src + '/custom/script.js', content.join("\n\n"), function (err) {
+    if (err) {
+      throw new Error("Can't write to file");
+    }
+    else {
+      console.log("Script generated successfully");
+    }
+  });
+}
+
+function fillSCSSContainer(type, label) {
+  // Append file to config.json
+  plugins.fs.readFile(configSCSSFile, 'utf8', function (err, data) {
+    var config = JSON.parse(data);
+
+    if (err) {
+      throw new Error('File error');
+    }
+    else {
+      config[label][type] = true;
+
+      plugins.fs.writeFile(configSCSSFile, JSON.stringify(config, null, 2), function (err) {
+        if (err) {
+          throw new Error('Cant write file')
+        }
+        else {
+          console.log("Config written successfully");
+          createSCSSContainer(config, label);
+        }
+      });
+    }
+  });
+}
+
+function createSCSSContainer(config, label) {
+  var typeArray = [];
+
+  if (Object.keys(config[label]).length) {
+    var element = Object.keys(config[label]).map(function (f, idx) {
+      if (config[label][f]) {
+        return "@import '"+ f + "';";
+      }
+
+      return "";
+    }).join("\n");
+
+    typeArray.push(element);
+    if (label !== "pages") {
+      plugins.fs.writeFile(css.src + '/includes/'+label+'/_'+label+'.scss', typeArray.join("\n"), function (err) {
+        if (err) {
+          throw new Error("Can't write to file");
+        }
+        else {
+          console.log("Script generated successfully");
+        }
+      });
+    }
+  }
+}
 
 
 /* Clean before build */

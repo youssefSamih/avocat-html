@@ -1,0 +1,5 @@
+.block-thumb	{
+  border: 1px solid map-get($colors, secondary);
+  color: map-get($colors, secondary);
+  padding: 20px;
+}

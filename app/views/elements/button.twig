@@ -1,12 +1,16 @@
 {#
-  btnstyle can be :  btn--more / btn--submit
-  type can be : link (<a>) / simple (<button>) / submit (type="button") / custom_clink (<a class="link">)
-  btnwhidth: btn-block(width : 100%) / empty (width : auto)
+   {% include "../elements/button.twig" with {
+      tag:'', a/ button
+      type : '',
+      style: '',
+      value: 'some Text',
+      shape: '', normal / circle
+    }%}
 #}
 {% if shape == "normal" %}
-  <{{ tag }} class="btn-eq {{ type }} {{ style }}">{{ value }}</{{ tag }}>
+  <{{ tag }} class="btn {{ type }} {{ style }}">{{ value }}</{{ tag }}>
 {% elseif shape == "circle" %}
-  <{{ tag }} class="btn-eq {{ type }} {{ style }}">{{ value }} {{ icon }}</{{ tag }}>
+  <{{ tag }} class="btn {{ type }} {{ style }}">{{ value }} {{ icon }}</{{ tag }}>
 {% elseif submit == true %}
   <{{ tag }} type="submit" class="btn-eq {{ type }} {{ style }}">{{ icon }}</{{ tag }}>
 {% endif %}
