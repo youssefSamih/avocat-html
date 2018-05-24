@@ -1,6 +1,8 @@
 ## GULP STARTER WITH GENERATORS AND TRANSLATIONS
 
 A Fleet Management System (FMS)
+
+
 ![Screenshot](screen.png)
 
 ## Getting Started
@@ -69,6 +71,7 @@ gulp generate --js myJs
 ```
 * This command allows you to create  ***"myJs.ks"*** under ***app/js/fragments*** folder, it automatically creates its content like folowing: 
 ```
+
 /*
  * myJs Functions
  * */
