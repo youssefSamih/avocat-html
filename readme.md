@@ -69,7 +69,10 @@ The new feature added is the ability te generate components via command line
 ```
 gulp generate --js myJs
 ```
+
 * This command allows you to create  ***"myJs.ks"*** under ***app/js/fragments*** folder, it automatically creates its content like folowing: 
+
+
 ```
 
 /*
@@ -83,10 +86,8 @@ CJS.myJs = {
 };
 
 ```
+
 * ***CJS*** is the namespace used to call scripts, you can replace it on ***app/js/confi.json***.
-
-
-
 * It also adds the call on the ***app/js/custom/scripts.js*** like folowing: 
 * **PS : All generated js files are automatically added to $(document).ready function :**
 
