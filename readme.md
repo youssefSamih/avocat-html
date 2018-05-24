@@ -6,18 +6,18 @@ A Fleet Management System (FMS)
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-*You can avoid installing dependencies and all stuff by going under  ***.dist*** folder and open the ***index.html*** file to view content.*
+*You can avoid installing dependencies and all stuff by going under  ***dist*** folder and open the ***index.html*** file to view content.*
 
 **But if you want to edit files you should follow instructions below**
 ### Prerequisites
 
 What things you need to install the software and how to install them.
 
-#####1 - Install Node JS using the link below:
+##### 1 - Install Node JS using the link below:
 ```
  https://www.npmjs.com/get-npm
 ```
-#####2 - Install Gulp JS using the link below:
+##### 2 - Install Gulp JS using the link below:
 ```
 https://gulpjs.com/
 ```
@@ -27,25 +27,25 @@ https://gulpjs.com/
 
 A step by step series of examples that tell you have to get a development env running
 
-#####1 - Clone repository using:
+##### 1 - Clone repository using:
 
 ```
 git clone  https://git.smile.fr/smile-maroc-montage/GulpStarter.git
 ```
 
-#####2 - Go to directory path:
+##### 2 - Go to directory path:
 
 ```
 cd EuroQuity
 ```
 
-#####3 - Install dependencies using:
+##### 3 - Install dependencies using:
 
 ```
 npm install
 ```
 
-#####4 - Run / Serve App using:
+##### 4 - Run / Serve App using:
 
 ```
 gulp
