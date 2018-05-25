@@ -33,13 +33,13 @@ A step by step series of examples that tell you have to get a development env ru
 ##### 1 - Clone repository using:
 
 ```
-git clone  https://git.xxxxx/ProjectName.git
+git clone  https://git.smile.fr/smile-maroc-montage/GulpStarter.git .
 ```
 
 ##### 2 - Go to directory path:
 
 ```
-cd ProjectName
+cd YourFolder
 ```
 
 ##### 3 - Install dependencies using:
@@ -48,10 +48,19 @@ cd ProjectName
 npm install
 ```
 
-##### 4 - Run / Serve App using:
+##### 4 - Init Project:
+* You have to fill some informations using the commande below:
+    * it will give you few questions , you juste have to fill them and ENJOY !
+```
+gulp init
+
+```
+
+##### 5 - Run / Serve App using:
 
 ```
 gulp
+
 ```
 
 ## Generating components *(NEW)*
@@ -138,6 +147,11 @@ page : Home
 {% endblock %}
 
 ```
+## Config Files
+
+* There are two ***CONFIG.JSON*** Files to ***NOT TOUCH or EDIT*** :
+    * app/scss/config.json : ***This file contains the structure of sass files fragments, lames and elements.***
+    * app/js/config.json : ***This file contains the structure of js files fragments.***
 
 ## Translations i18n
 
