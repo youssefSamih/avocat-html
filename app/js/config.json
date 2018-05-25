@@ -4,6 +4,5 @@
   "namespace": "CJS",
   "fragments": {
     "myJs": true,
-    "myJs2": true
   }
 }

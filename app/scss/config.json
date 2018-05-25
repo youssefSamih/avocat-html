@@ -10,15 +10,12 @@
     "thumb": true
   },
   "fragments": {
-    "block-thumb": true
+    "block-thumb": true,
   },
   "lames": {
-    "lame-thumb": true,
-    "lame-thumbs": true
+    "lame-thumb": true
   },
   "pages": {
-    "index": true,
-    "home": true,
-    "Home": true
+    "index": true
   }
 }

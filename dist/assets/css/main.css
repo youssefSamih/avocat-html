@@ -349,14 +349,14 @@ select,
       color: #fff; }
 
 .block-thumb {
-  padding: 20px;
-  border: 1px solid #f8c93e; }
+  border: 1px solid #f8c93e;
+  padding: 20px; }
   .block-thumb > * {
     color: #f8c93e; }
 
 .lame-thumb {
-  padding: 20px;
-  border: 1px solid #713611; }
+  border: 1px solid #713611;
+  padding: 20px; }
   .lame-thumb > * {
     color: #713611; }
 
