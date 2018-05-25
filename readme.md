@@ -33,13 +33,13 @@ A step by step series of examples that tell you have to get a development env ru
 ##### 1 - Clone repository using:
 
 ```
-git clone  https://git.smile.fr/smile-maroc-montage/GulpStarter.git
+git clone  https://git.xxxxx/ProjectName.git
 ```
 
 ##### 2 - Go to directory path:
 
 ```
-cd GulpStarter
+cd ProjectName
 ```
 
 ##### 3 - Install dependencies using:

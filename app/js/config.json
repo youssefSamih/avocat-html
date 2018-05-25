@@ -1,8 +1,8 @@
 {
   "strict": true,
   "ready": true,
-  "namespace": "CJS",
   "fragments": {
-    "myJs": true,
-  }
+    "myJs" : true
+  },
+  "namespace": "'SCJ'"
 }

@@ -6,11 +6,10 @@
     "iframe": true,
     "input": true,
     "radioboxes": true,
-    "select": true,
-    "thumb": true
+    "select": true
   },
   "fragments": {
-    "block-thumb": true,
+    "block-thumb": true
   },
   "lames": {
     "lame-thumb": true

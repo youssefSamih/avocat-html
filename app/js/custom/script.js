@@ -1,9 +1,9 @@
 "use strict";
 
-var CJS = CJS || {};
+var ONCF = ONCF || {};
 
 $(document).ready(function () {
 
-	CJS.myJs.init();
+	ONCF.myJs.init();
 
 });

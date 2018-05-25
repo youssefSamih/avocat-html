@@ -1,7 +1,7 @@
 {
-  "name": "Smile GulpStarter",
+  "name": "Smile Starter",
   "version": "1.0.0",
-  "description": "Smile GulpStarter",
+  "description": "Smile Gul Starter wit Generators",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp serve"
@@ -32,6 +32,7 @@
     "gulp-sass-lint": "^1.3.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-strip-comments": "^2.5.2",
+    "gulp-strip-css-comments": "^2.0.0",
     "gulp-strip-debug": "^3.0.0",
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.0",
@@ -44,6 +45,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "gulp-file": "^0.4.0",
+    "gulp-prompt": "^1.0.1",
     "minimist": "^1.2.0"
   }
 }

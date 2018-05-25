@@ -8,36 +8,49 @@
  *    - JS concatenation & minification
  *    - Image optimisation
  *    - Assets copying
- *    - Removing unused assets
+ *    - Auto Generate components
+ *    - Translations
  */
 
 "use strict";
 
 /* 0- Set processing paths */
 
-var appRoot = './app';
-var distRoot = './dist';
-var fonts = {src: appRoot + '/fonts', dest: distRoot + '/assets/fonts'};
-var views = {
-  src: appRoot + '/views',
-  tpls: appRoot + '/views/pages',
-  dest: distRoot
-};
-var imgs = {src: appRoot + '/imgs', dest: distRoot + '/assets/imgs'};
-var css = {src: appRoot + '/scss', dest: distRoot + '/assets/css'};
-var js = {src: appRoot + '/js', dest: distRoot + '/assets/js'};
-
-var configSCSSFile = css.src + '/config.json';
-var configJSFile = js.src + '/config.json';
+var appRoot = './app',
+  distRoot = './dist',
+  fonts = {
+    src: appRoot + '/fonts',
+    dest: distRoot + '/assets/fonts'
+  },
+  views = {
+    src: appRoot + '/views',
+    tpls: appRoot + '/views/pages',
+    dest: distRoot
+  },
+  imgs = {
+    src: appRoot + '/imgs',
+    dest: distRoot + '/assets/imgs'
+  },
+  css = {
+    src: appRoot + '/scss',
+    dest: distRoot + '/assets/css'
+  },
+  js = {
+    src: appRoot + '/js',
+    dest: distRoot + '/assets/js'
+  },
+  configSCSSFile = css.src + '/config.json',
+  configJSFile = js.src + '/config.json',
+  packageJson = './package.json';
 
 /* 1- Loading all plugins */
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')({
-  pattern: '*',
-  rename: {
-    jshint: 'jslint'
-  }
-});
+var gulp = require('gulp'),
+  plugins = require('gulp-load-plugins')({
+    pattern: '*',
+    rename: {
+      jshint: 'jslint'
+    }
+  });
 
 plugins.browserSync.create();
 
@@ -107,6 +120,7 @@ gulp.task('scss', function () {
       browsers: ['> 1%', 'last 2 versions', 'safari 5', 'ie 10', 'ie 6', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
       cascade: false
     }))
+    .pipe(plugins.stripCssComments())
     .pipe(gulp.dest(css.dest))
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.cleanCss({compatibility: 'ie8'}))
@@ -118,6 +132,7 @@ gulp.task('scss', function () {
 gulp.task('csslibs', function () {
   gulp.src([css.src + '/vendor/*.css'])
     .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(plugins.stripCssComments())
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.cleanCss({compatibility: 'ie8'}))
     .pipe(plugins.concat("libs.css"))
@@ -157,8 +172,8 @@ gulp.task('jshint', function () {
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish', {beep: true}))
     .pipe(plugins.concat('main.js'))
-    .pipe(plugins.stripDebug())
-    .pipe(plugins.stripComments())
+    .pipe(plugins.stripDebug()) // Removing logs from js files
+    .pipe(plugins.stripComments()) // Removing comments from JS files
     .pipe(gulp.dest(js.dest))
     .pipe(plugins.uglify())
     .pipe(plugins.rename('main.min.js'))
@@ -174,6 +189,8 @@ gulp.task('jslibs', function () {
     .pipe(plugins.plumber())
     .pipe(plugins.newer(js.dest + '/vendor/**/*.js'))
     .pipe(plugins.concat('libs.js'))
+    .pipe(plugins.stripDebug()) // Removing logs from js files
+    .pipe(plugins.stripComments()) // Removing comments from JS files
     .pipe(gulp.dest(js.dest + '/vendor'))
     .pipe(plugins.uglify())
     .pipe(plugins.rename('libs.min.js'))
@@ -212,7 +229,7 @@ var options = plugins.minimist(process.argv.slice(2));
 gulp.task('generate', function (cb) {
   var content = "";
   if (options.element && typeof options.element === "string") { // Generating element
-    plugins.file(options.element + '.scss', '.'+options.element+'\t{\n\n}')
+    plugins.file(options.element + '.scss', '.' + options.element + '\t{\n\n}')
       .pipe(gulp.dest(css.src + '/includes/elements'));
 
     plugins.file(options.element + '.twig', 'element')
@@ -222,19 +239,19 @@ gulp.task('generate', function (cb) {
 
   }
   else if (options.fragment && typeof options.fragment === "string") { // Generating fragment
-    plugins.file(options.fragment + '.scss', '.'+options.fragment+'\t{\n\n}')
+    plugins.file(options.fragment + '.scss', '.' + options.fragment + '\t{\n\n}')
       .pipe(gulp.dest(css.src + '/includes/fragments'));
 
-    plugins.file(options.fragment + '.twig', '<div class="block '+options.fragment+'">\n'+options.fragment+'\n'+'</div>')
+    plugins.file(options.fragment + '.twig', '<div class="block ' + options.fragment + '">\n' + options.fragment + '\n' + '</div>')
       .pipe(gulp.dest(views.src + '/fragments'));
 
     fillSCSSContainer(options.fragment, 'fragments');
   }
   else if (options.lame && typeof options.lame === "string") { // Generating lame
-    plugins.file(options.lame + '.scss', '.'+options.lame+'\t{\n\n}')
+    plugins.file(options.lame + '.scss', '.' + options.lame + '\t{\n\n}')
       .pipe(gulp.dest(css.src + '/includes/lames'));
 
-    plugins.file(options.lame + '.twig', '<section class="lame '+options.lame+'">\n'+options.lame+'\n'+'</section>')
+    plugins.file(options.lame + '.twig', '<section class="lame ' + options.lame + '">\n' + options.lame + '\n' + '</section>')
       .pipe(gulp.dest(views.src + '/lames'));
 
     fillSCSSContainer(options.lame, 'lames');
@@ -252,7 +269,7 @@ gulp.task('generate', function (cb) {
     plugins.file(options.page + '.twig', content)
       .pipe(gulp.dest(views.tpls));
 
-    fillSCSSContainer(options.page , 'pages');
+    fillSCSSContainer(options.page, 'pages');
   }
   else if (options.layout && typeof options.layout === "string") { // Generating layout
     plugins.file(options.layout + '.twig', '')
@@ -357,7 +374,7 @@ function fillSCSSContainer(type, label) {
 
       plugins.fs.writeFile(configSCSSFile, JSON.stringify(config, null, 2), function (err) {
         if (err) {
-          throw new Error('Cant write file')
+          throw new Error('Cant write file');
         }
         else {
           console.log("Config written successfully");
@@ -374,15 +391,15 @@ function createSCSSContainer(config, label) {
   if (Object.keys(config[label]).length) {
     var element = Object.keys(config[label]).map(function (f, idx) {
       if (config[label][f]) {
-        return "@import '"+ f + "';\n";
+        return "@import '" + f + "';\n";
       }
 
-      return "";
+      return "\n";
     }).join("\n");
 
     typeArray.push(element);
     if (label !== "pages") {
-      plugins.fs.writeFile(css.src + '/includes/'+label+'/_'+label+'.scss', typeArray.join("\n"), function (err) {
+      plugins.fs.writeFile(css.src + '/includes/' + label + '/_' + label + '.scss', typeArray.join("\n"), function (err) {
         if (err) {
           throw new Error("Can't write to file");
         }
@@ -446,6 +463,97 @@ gulp.task('build', function () {
   );
 });
 
+gulp.task('init', function () {
+  gulp.src('./package.json')
+    .pipe(plugins.prompt.prompt([{
+      type: 'input',
+      name: 'name',
+      message: 'Project name : '
+    },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Project description : '
+      },
+      {
+        type: 'input',
+        name: 'namespace',
+        message: 'Project nameSpace : '
+      }], function (res) {
+
+      saveInit(res.name, res.description, res.namespace);
+    }));
+});
+
+function saveInit(pName, pDesc, pNamespace) {
+  // Init config SCSS File
+  plugins.fs.readFile(configSCSSFile, 'utf8', function (err, data) {
+    var config = JSON.parse(data);
+
+    if (err) {
+      throw new Error('File error');
+    }
+    else {
+      config.fragments = {};
+      config.lames = {};
+
+      plugins.fs.writeFile(configSCSSFile, JSON.stringify(config, null, 2), function (err) {
+        if (err) {
+          throw new Error('Cant write file');
+        }
+        else {
+          console.log("SCSS Init successfully");
+          createSCSSContainer();
+        }
+      });
+    }
+  });
+
+  // Init config JS File
+  plugins.fs.readFile(configJSFile, 'utf8', function (err, data) {
+    var config = JSON.parse(data);
+
+    if (err) {
+      throw new Error('File error');
+    }
+    else {
+      config.namespace = pNamespace;
+      config.fragments = {};
+
+      plugins.fs.writeFile(configJSFile, JSON.stringify(config, null, 2), function (err) {
+        if (err) {
+          throw new Error('Cant write file');
+        }
+        else {
+          console.log("JS Init successfully");
+          createMainJS();
+        }
+      });
+    }
+  });
+
+  // Init config PACKAGE JSON File
+  plugins.fs.readFile(packageJson, 'utf8', function (err, data) {
+    var config = JSON.parse(data);
+
+    if (err) {
+      throw new Error('File error');
+    }
+    else {
+      config.name = pName;
+      config.description = pDesc;
+
+      plugins.fs.writeFile(packageJson, JSON.stringify(config, null, 2), function (err) {
+        if (err) {
+          throw new Error('Cant write file');
+        }
+        else {
+          console.log("Init successfully");
+        }
+      });
+    }
+  });
+}
 
 /* Watch DOG */
 gulp.task('serve', ['build'], function () {

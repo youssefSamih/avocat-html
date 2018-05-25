@@ -1,7 +1,7 @@
 /*
  * myJs Functions
  * */
-CJS.myJs = {
+ONCF.myJs = {
 	init: function () {
 
 	}
