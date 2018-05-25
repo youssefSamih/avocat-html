@@ -3,6 +3,7 @@
   "ready": true,
   "namespace": "CJS",
   "fragments": {
-    "myJs": true
+    "myJs": true,
+    "myJs2": true
   }
 }

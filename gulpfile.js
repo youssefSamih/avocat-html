@@ -373,7 +373,7 @@ function createSCSSContainer(config, label) {
   if (Object.keys(config[label]).length) {
     var element = Object.keys(config[label]).map(function (f, idx) {
       if (config[label][f]) {
-        return "@import '"+ f + "';";
+        return "@import '"+ f + "';\n";
       }
 
       return "";

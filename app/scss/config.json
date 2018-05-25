@@ -13,7 +13,8 @@
     "block-thumb": true
   },
   "lames": {
-    "lame-thumb": true
+    "lame-thumb": true,
+    "lame-thumbs": true
   },
   "pages": {
     "index": true,

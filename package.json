@@ -1,7 +1,7 @@
 {
-  "name": "Gulp Starter",
+  "name": "Smile GulpStarter",
   "version": "1.0.0",
-  "description": "Gulp Starter",
+  "description": "Smile GulpStarter",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp serve"
