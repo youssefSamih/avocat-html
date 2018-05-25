@@ -1,9 +1,7 @@
 "use strict";
 
-var SCJ = SCJ || {};
+var CS = CS || {};
 
 $(document).ready(function () {
-
-	SCJ.test.init();
 
 });

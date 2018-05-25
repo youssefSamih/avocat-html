@@ -1,8 +1,6 @@
 {
   "strict": true,
   "ready": true,
-  "fragments": {
-    "test": true
-  },
-  "namespace": "SCJ"
+  "fragments": {},
+  "namespace": "CS"
 }

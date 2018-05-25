@@ -113,7 +113,7 @@ $(document).ready(function () {
 });
 
 ```
-### 1 - Generating HTML / SCSS FILES
+### 2 - Generating HTML / SCSS FILES
 * Only ***elements***, ***fragments*** and ***lames*** can add SCSS Files ***not pages and layouts***
 
 ```

@@ -8,12 +8,8 @@
     "radioboxes": true,
     "select": true
   },
-  "fragments": {
-    "block-test": true
-  },
-  "lames": {
-    "lame-test": true
-  },
+  "fragments": {},
+  "lames": {},
   "pages": {
     "index": true
   }
