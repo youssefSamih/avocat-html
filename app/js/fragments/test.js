@@ -1,7 +1,7 @@
 /*
- * myJs Functions
+ * test Functions
  * */
-ONCF.myJs = {
+SCJ.test = {
 	init: function () {
 
 	}

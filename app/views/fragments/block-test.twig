@@ -1,0 +1,10 @@
+<div class="block block-test">
+  <p>Hey i'm a <b>FRAGMENT</b>, and i'm including a Button <b>ELEMENT</b></p>
+  {% include "../elements/button.twig" with {
+  tag:'button',
+  type : 'primary',
+  style: "",
+  value: 'im a button <b>ELEMENT</b>',
+  shape: 'normal',
+  } %}
+</div>

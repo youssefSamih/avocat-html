@@ -6,6 +6,10 @@
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
+.test {
+  border: 1px solid grey;
+  padding: 15px; }
+
 html {
   font-family: sans-serif;
   line-height: 1.5;
@@ -339,16 +343,16 @@ select,
       background-color: #000;
       color: #fff; }
 
-.block-thumb {
+.block-test {
   border: 1px solid #f8c93e;
-  padding: 20px; }
-  .block-thumb > * {
+  padding: 15px; }
+  .block-test * {
     color: #f8c93e; }
 
-.lame-thumb {
+.lame-test {
   border: 1px solid #713611;
-  padding: 20px; }
-  .lame-thumb > * {
+  padding: 15px; }
+  .lame-test * {
     color: #713611; }
 
 

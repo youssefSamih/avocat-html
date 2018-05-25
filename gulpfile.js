@@ -207,20 +207,6 @@ gulp.task('views', function () {
     .pipe(plugins.browserSync.stream());
 });
 
-gulp.task('sync-views', function (done) {
-  plugins.syncy(views.tpls + '/*.html', views.dest, {
-    verbose: true,
-    base: views.tpls,
-    ignoreInDest: 'assets/**'
-  })
-    .then(function () {
-      done();
-    })
-    .catch(function (err) {
-      done(err);
-    });
-});
-
 
 /* Generating content */
 
@@ -486,6 +472,11 @@ gulp.task('init', function () {
 });
 
 function saveInit(pName, pDesc, pNamespace) {
+  plugins.runSequence(
+    'initRemove',
+    'createIndex'
+  );
+
   // Init config SCSS File
   plugins.fs.readFile(configSCSSFile, 'utf8', function (err, data) {
     var config = JSON.parse(data);
@@ -503,7 +494,8 @@ function saveInit(pName, pDesc, pNamespace) {
         }
         else {
           console.log("SCSS Init successfully");
-          createSCSSContainer();
+          createSCSSContainer(config, "lames");
+          createSCSSContainer(config, "fragments");
         }
       });
     }
@@ -526,7 +518,7 @@ function saveInit(pName, pDesc, pNamespace) {
         }
         else {
           console.log("JS Init successfully");
-          createMainJS();
+          createMainJS(config);
         }
       });
     }
@@ -554,6 +546,34 @@ function saveInit(pName, pDesc, pNamespace) {
     }
   });
 }
+
+gulp.task('initRemove', function () {
+  return gulp.src([
+    views.src + "/pages/*.twig",
+    views.src + "/fragments/*.twig",
+    views.src + "/lames/*.twig",
+    js.src + "/fragments/*.js",
+    css.src + "/includes/lames/*.scss",
+    css.src + "/includes/fragments/*.scss",
+    "!" + css.src + "/includes/lames/_lames.scss", // Exclude this file from clean
+    "!" + css.src + "/includes/fragments/_fragments.scss" // Exclude this file from clean
+  ])
+    .pipe(plugins.clean({force: true}));
+});
+
+gulp.task('createIndex', function() {
+  // Generate a new index under app/views/pages
+  var content = '{% extends "../layout/skeleton.twig" %}\n' +
+    '{% block title %}\n' +
+    'Hello World \n' +
+    '{% endblock %}\n' +
+    '{% block main %}\n' +
+    '<p>Index page</p>\n' +
+    '{% endblock %}';
+
+  return plugins.file('index.twig', content)
+    .pipe(gulp.dest(views.tpls));
+});
 
 /* Watch DOG */
 gulp.task('serve', ['build'], function () {

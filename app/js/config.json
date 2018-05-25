@@ -2,7 +2,7 @@
   "strict": true,
   "ready": true,
   "fragments": {
-    "myJs" : true
+    "test": true
   },
-  "namespace": "'SCJ'"
+  "namespace": "SCJ"
 }

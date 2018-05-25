@@ -1,14 +1,14 @@
 "use strict";
 
-var ONCF = ONCF || {};
+var SCJ = SCJ || {};
 
 $(document).ready(function () {
 
-	ONCF.myJs.init();
+	SCJ.test.init();
 
 });
 
-ONCF.myJs = {
+SCJ.test = {
 	init: function () {
 
 	}

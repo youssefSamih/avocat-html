@@ -1,8 +1,10 @@
 {% extends "../layout/skeleton.twig" %}
 {% block title %}
-Accueil
+  Hello World
 {% endblock %}
 {% block main %}
-  <p>I'm the <b>index PAGE</b> and i'm including <b>lame-thumb LAME</b> inside me</p>
-  {%  include "../lames/lame-thumb.twig" %}
+  <div class="test">
+    <p>Hey i'm a <b>PAGE</b> and i'm including a <b>LAME</b></p>
+    {% include "../lames/lame-test.twig" %}
+  </div>
 {% endblock %}

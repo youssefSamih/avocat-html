@@ -5,6 +5,10 @@
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
+.test {
+  border: 1px solid grey;
+  padding: 15px;
+}
 html {
   font-family: sans-serif;
   line-height: 1.5;

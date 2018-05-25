@@ -9,10 +9,10 @@
     "select": true
   },
   "fragments": {
-    "block-thumb": true
+    "block-test": true
   },
   "lames": {
-    "lame-thumb": true
+    "lame-test": true
   },
   "pages": {
     "index": true
