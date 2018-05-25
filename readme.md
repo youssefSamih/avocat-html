@@ -51,6 +51,7 @@ npm install
 ##### 4 - Init Project:
 * You have to fill some informations using the commande below:
     * it will give you few questions , you juste have to fill them and ENJOY !
+    
 ```
 gulp init
 
