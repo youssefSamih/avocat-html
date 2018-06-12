@@ -309,19 +309,27 @@ gulp.task('generate', function (cb) {
 function createFragmentJS(config) {
   // Creation of custom fragments JS
   for (var i = 0; i < Object.keys(config.fragments).length; i++) {
-    var content = "" +
-      "/*\n" +
-      " * " + Object.keys(config.fragments)[i] + " Functions\n" +
-      " * */\n" +
-      config.namespace + '.' + Object.keys(config.fragments)[i] + " = {\n" +
-      "\tinit: function () {\n" +
-      "\n" +
-      "\t}\n" +
-      "};\n";
-    plugins.file(Object.keys(config.fragments)[i] + '.js', content)
-      .pipe(gulp.dest(js.src + '/fragments'));
+    const name = Object.keys(config.fragments)[i];
+    plugins.fs.exists("app/js/fragments/"+name + '.js', (exists) => {
+      if(!exists) {
+        var content = "" +
+            "/*\n" +
+            " * " + name + " Functions\n" +
+            " * */\n" +
+            config.namespace + '.' +name + " = {\n" +
+            "\tinit: function () {\n" +
+            "\n" +
+            "\t}\n" +
+            "};\n";
+
+        plugins.file(name + '.js', content)
+            .pipe(gulp.dest(js.src + '/fragments'));
+              return false;
+      }
+    });
   }
 }
+
 
 function createMainJS(config) {
   createFragmentJS(config);
