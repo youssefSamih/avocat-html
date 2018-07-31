@@ -1,6 +1,6 @@
 "use strict";
 
-var SCP = SCP || {};
+var CS = CS || {};
 
 $(document).ready(function () {
 
