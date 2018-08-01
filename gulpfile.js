@@ -13,7 +13,7 @@
  */
 
 "use strict";
-
+// TODO Generate vendor concat and vendor each file only
 /* 0- Set processing paths */
 
 var appRoot = './app',
@@ -280,9 +280,9 @@ gulp.task('generate', function (cb) {
     plugins.file(options.layout + '.twig', '')
       .pipe(gulp.dest(views.src + '/layout'));
   }
-  else if (options.js && typeof options.js === "string") { // Generating layout
+  else if (options.javascript && typeof options.javascript === "string") { // Generating js
 
-    // Append file to config.json
+// Append file to config.json
     plugins.fs.readFile(configJSFile, 'utf8', function (err, data) {
       var config = JSON.parse(data);
       if (err) {
@@ -290,7 +290,7 @@ gulp.task('generate', function (cb) {
       }
       else {
 
-        config.fragments[options.js] = true;
+        config.fragments[options.javascript] = true;
 
         plugins.fs.writeFile(configJSFile, JSON.stringify(config, null, 2), function (err) {
           if (err) {
@@ -307,7 +307,7 @@ gulp.task('generate', function (cb) {
 });
 
 function createFragmentJS(config) {
-  // Creation of custom fragments JS
+// Creation of custom fragments JS
   for (var i = 0; i < Object.keys(config.fragments).length; i++) {
     var content = "" +
       "/*\n" +
@@ -367,7 +367,7 @@ function createMainJS(config) {
 }
 
 function fillSCSSContainer(type, label) {
-  // Append file to config.json
+// Append file to config.json
   plugins.fs.readFile(configSCSSFile, 'utf8', function (err, data) {
     var config = JSON.parse(data);
 
@@ -522,7 +522,7 @@ function saveInit(pName, pDesc, pNamespace, pTranslate) {
     return;
   });
 
-  // Init config SCSS File
+// Init config SCSS File
   plugins.fs.readFile(configSCSSFile, 'utf8', function (err, data) {
     var config = JSON.parse(data);
 
@@ -546,7 +546,7 @@ function saveInit(pName, pDesc, pNamespace, pTranslate) {
     }
   });
 
-  // Init config JS File
+// Init config JS File
   plugins.fs.readFile(configJSFile, 'utf8', function (err, data) {
     var config = JSON.parse(data);
 
@@ -569,7 +569,7 @@ function saveInit(pName, pDesc, pNamespace, pTranslate) {
     }
   });
 
-  // Init config PACKAGE JSON File
+// Init config PACKAGE JSON File
   plugins.fs.readFile(packageJson, 'utf8', function (err, data) {
     var config = JSON.parse(data);
 
@@ -591,7 +591,7 @@ function saveInit(pName, pDesc, pNamespace, pTranslate) {
     }
   });
 
-  // If the user choose to enable translate option
+// If the user choose to enable translate option
   if (pTranslate === "y" || pTranslate === "Y") {
     plugins.file('fr.json', '{\n\n}')
       .pipe(gulp.dest(locales.src));
@@ -614,14 +614,14 @@ gulp.task('initRemove', function () {
     css.src + "/includes/lames/*.scss",
     css.src + "/includes/fragments/*.scss",
     "!" + css.src + "/includes/lames/_lames.scss", // Exclude this file from
-                                                   // clean
+// clean
     "!" + css.src + "/includes/fragments/_fragments.scss" // Exclude this file
-                                                          // from clean
+// from clean
   ]).pipe(plugins.clean({force: true}));
 });
 
 gulp.task('createIndex', function () {
-  // Generate a new index under app/views/pages
+// Generate a new index under app/views/pages
   var content = '{% extends "../layout/skeleton.twig" %}\n' +
     '{% block title %}\n' +
     'Hello World \n' +
@@ -636,7 +636,7 @@ gulp.task('createIndex', function () {
 
 /* Watch DOG */
 gulp.task('serve', ['build'], function () {
-  // Static server & Autoreload
+// Static server & Autoreload
   plugins.browserSync.init({
     server: {
       baseDir: distRoot
