@@ -72,11 +72,11 @@ The new feature added is the ability te generate components via command line
  * gulp ***generate*** **--lame** {{ name }}
  * gulp ***generate*** **--page** {{ name }}
  * gulp ***generate*** **--layout** {{ name }}
- * gulp ***generate*** **--js** {{ name }}
+ * gulp ***generate*** **--javascript** {{ name }}
 
 ### 1 - Generating JS FILES
 ```
-gulp generate --js myJs
+gulp generate --javascript myJs
 ```
 
 * This command allows you to create  ***"myJs.ks"*** under ***app/js/fragments*** folder, it automatically creates its content like folowing: 
