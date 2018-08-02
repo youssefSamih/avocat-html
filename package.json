@@ -1,7 +1,7 @@
 {
   "name": "Smile",
   "version": "1.0.0",
-  "description": "Smile Gulp Init with Generators",
+  "description": "Smile custom project",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp serve"
