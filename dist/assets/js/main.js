@@ -8,3 +8,15 @@ $(document).ready(function () {
 	SCP.test2.init();
 
 });
+
+SCP.test = {
+	init: function () {
+			void 0
+	}
+};
+
+SCP.test2 = {
+	init: function () {
+
+	}
+};
