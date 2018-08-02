@@ -208,6 +208,7 @@ gulp.task('jslibs', function () {
 gulp.task('views-w-translate', function () {
   gulp.src([views.tpls + '/*.twig'])
     .pipe(plugins.twig())
+    .pipe(plugins.browserSync.stream())
     .pipe(
       plugins.translation({
           locale: locales.src + '*/**.json',
@@ -216,8 +217,7 @@ gulp.task('views-w-translate', function () {
         }
       )
     )
-    .pipe(gulp.dest(views.dest))
-    .pipe(plugins.browserSync.stream());
+    .pipe(gulp.dest(views.dest));
 });
 
 gulp.task('views', function () {
