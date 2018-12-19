@@ -1,7 +1,9 @@
-## Montage OCP Africa
+## GULP STARTER WITH GENERATORS AND TRANSLATIONS
 
 A Fleet Management System (FMS)
 - AUTOMATICALLY AND EASILLY GENERATE COMPONENTS, BASED ON ATOMIC DESIGN LOGIC: ***Element > Fragment > Lame > Page***.
+
+![Screenshot](screen.png)
 
 ## Getting Started
 
@@ -30,13 +32,13 @@ A step by step series of examples that tell you have to get a development env ru
 ##### 1 - Clone repository using:
 
 ```
-git clone  https://git.smile.fr/smile-maroc-montage/ocp_africa.git .
+git clone  https://git.smile.fr/smile-maroc-montage/GulpStarter.git .
 ```
 
 ##### 2 - Go to directory path:
 
 ```
-cd ocp_africa
+cd YourFolder
 ```
 
 ##### 3 - Install dependencies using:
@@ -213,4 +215,5 @@ The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
 
 ## Authors
 
-* **Abdelfattah ELACHKOURA**  - *FrontEnd Dev* - [Abela](https://git.smile.fr/abela)
+* **Tarik HADDADI**  - *FrontEnd Dev* - [TarikHaddadi](https://git.smile.fr/tahad)
+* **Mossaab KANZIT** - *FrontEnd Dev* - [MossabKanzit](https://git.smile.fr/mokan)
