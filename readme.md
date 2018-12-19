@@ -1,10 +1,7 @@
-## GULP STARTER WITH GENERATORS AND TRANSLATIONS
+## Montage OCP Africa
 
 A Fleet Management System (FMS)
 - AUTOMATICALLY AND EASILLY GENERATE COMPONENTS, BASED ON ATOMIC DESIGN LOGIC: ***Element > Fragment > Lame > Page***.
-
-
-![Screenshot](screen.png)
 
 ## Getting Started
 
@@ -33,13 +30,13 @@ A step by step series of examples that tell you have to get a development env ru
 ##### 1 - Clone repository using:
 
 ```
-git clone  https://git.smile.fr/smile-maroc-montage/GulpStarter.git .
+git clone  https://git.smile.fr/smile-maroc-montage/ocp_africa.git .
 ```
 
 ##### 2 - Go to directory path:
 
 ```
-cd YourFolder
+cd ocp_africa
 ```
 
 ##### 3 - Install dependencies using:
@@ -51,7 +48,7 @@ npm install
 ##### 4 - Init Project:
 * You have to fill some informations using the commande below:
     * it will give you few questions , you juste have to fill them and ENJOY !
-    
+
 ```
 gulp init
 
@@ -79,7 +76,7 @@ The new feature added is the ability te generate components via command line
 gulp generate --javascript myJs
 ```
 
-* This command allows you to create  ***"myJs.ks"*** under ***app/js/fragments*** folder, it automatically creates its content like folowing: 
+* This command allows you to create  ***"myJs.ks"*** under ***app/js/fragments*** folder, it automatically creates its content like folowing:
 
 
 ```
@@ -87,7 +84,7 @@ gulp generate --javascript myJs
 /*
  * myJs Functions
  * */
- 
+
 CJS.myJs = {
     init: function () {
         // add your code here
@@ -97,16 +94,16 @@ CJS.myJs = {
 ```
 
 * ***CJS*** is the namespace used to call scripts, you can replace it on ***app/js/confi.json***.
-* It also adds the call on the ***app/js/custom/scripts.js*** like folowing: 
+* It also adds the call on the ***app/js/custom/scripts.js*** like folowing:
 * **PS : All generated js files are automatically added to $(document).ready function :**
 
 ```
 "use strict";
-    
+
 var CJS = CJS || {};
-    
+
 $(document).ready(function () {
-    
+
     CJS.myJs.init();
     CJS.myJs2.init();
     ...
@@ -131,12 +128,12 @@ gulp generate --lame myLame
 ```
   gulp generate --page myPage
   gulp generate --layout myLayout
-  
+
 ```
 * While executing one of these commands:
     * it generates a ***twig*** file under ***app/views/pages , layout*** folder, with ***Twig*** content (depending on what you generated) like folowing:
     * ***PS: NO SCSS file generated***
-    
+
 ```
 
 {% extends "../layout/skeleton.twig" %}
@@ -156,7 +153,7 @@ page : Home
 
 ## Translations i18n
 
-***(Docs Coming soon)*** 
+***(Docs Coming soon)***
 
 ## APP Folder Structure
 
@@ -202,7 +199,7 @@ The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
 * [GulpJS](https://gulpjs.com/) - Workflow Automation :
     * [GULP TWIG](/) - HTML BUILD.
     * [CSS LINTER]() - CSS validator.
-    * [AUTOP REFIXER]() - Adding prefixes CSS3 attributes (Enabling CrossBrowser Support). 
+    * [AUTOP REFIXER]() - Adding prefixes CSS3 attributes (Enabling CrossBrowser Support).
     * [BROWSER SYNC]() - Auto refresh content while making changes on HTML, CSS, JS files from ***App*** folder.
     * [JS HINT]() - JS Syntax Validator.
 * [TWIG](https://gulpjs.com/) - Workflow Automation.
@@ -216,5 +213,4 @@ The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
 
 ## Authors
 
-* **Tarik HADDADI**  - *FrontEnd Dev* - [TarikHaddadi](https://git.smile.fr/tahad)
-* **Mossaab KANZIT** - *FrontEnd Dev* - [MossabKanzit](https://git.smile.fr/mokan)
+* **Abdelfattah ELACHKOURA**  - *FrontEnd Dev* - [Abela](https://git.smile.fr/abela)
