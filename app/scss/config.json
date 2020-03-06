@@ -9,7 +9,12 @@
     "select": true
   },
   "fragments": {},
-  "lames": {},
+  "lames": {
+    "lame-home": true,
+    "lame-presentation": true,
+    "lame-expertises": true,
+    "lame-contact": true
+  },
   "pages": {
     "index": true
   }
