@@ -1,10 +1,7 @@
 "use strict";
 
-var SCP = SCP || {};
+var AV = AV || {};
 
 $(document).ready(function () {
-
-	SCP.test.init();
-	SCP.test2.init();
 
 });

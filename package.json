@@ -1,7 +1,7 @@
 {
-  "name": "Smile",
+  "name": "",
   "version": "1.0.0",
-  "description": "Smile custom project",
+  "description": "avocat",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp serve"

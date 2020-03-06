@@ -1,9 +1,6 @@
 {
   "strict": true,
   "ready": true,
-  "fragments": {
-    "test": true,
-    "test2": true
-  },
-  "namespace": "SCP"
+  "fragments": {},
+  "namespace": "AV"
 }
