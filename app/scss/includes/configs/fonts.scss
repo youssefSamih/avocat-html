@@ -42,8 +42,16 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Nouvelle Vague";
   src: url('../fonts/nouvelle_vague_final.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Hei';
+  src: url('../fonts/MSHei.woff2') format('woff2'),
+      url('../fonts/MSHei.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {

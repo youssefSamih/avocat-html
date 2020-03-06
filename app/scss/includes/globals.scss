@@ -26,6 +26,7 @@ body {
   margin: 0 auto;
   position: relative;
   text-align: left;
+  display: flex;
 }
 main {
   overflow: hidden;
@@ -76,7 +77,7 @@ span {
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 // Lists
 dl, ol, ul {

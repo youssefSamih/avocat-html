@@ -1,0 +1,98 @@
+.sidebar{
+  height: 100vh;
+  position: fixed;
+  width: 130px;
+  &__nav{
+    height: 100%;
+    background: map-get($colors, white);
+    &__ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .nav-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 18px;
+        width: 100%;
+        &:last-child{
+          &:after{
+            content: '';
+            border: none;
+          }
+        }
+        &:after {
+          content: '';
+          border: .5px solid map-get($colors, secondary);
+          width: 39px;
+          margin-bottom: 17px;
+          margin-top: 17px;
+        }
+        .active {
+          color: map-get($colors, primary);
+          p{
+            color: map-get($colors, primary);
+          }
+        }
+        &__link{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: map-get($colors, secondary);
+
+
+          &__ic{
+            font-size: $global-font-nav-icon;
+            margin-bottom: 4px;
+          }
+          &__title{
+            font-size: 14px;
+          }
+        }
+      }
+      .logo{
+        background: linear-gradient(180deg, #FB1173 0%, #F6073F 100%);
+        margin-bottom: 18px;
+        height: 117px;
+        display: flex;
+        justify-content: end;
+        &__link{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+          &__title{
+            display: flex;
+            transform: translateX(-4px);
+            .logoLetter{
+              color: map-get($colors, white);
+              font-size: $global-font-logo-size;
+              font-family: $global-font-vague;
+
+              &:nth-child(1){
+                transform: translateX(15px);
+              }
+              &:nth-child(2){
+                transform: translateY(15px);
+              }
+            }
+          }
+          &__subTitle{
+            color: map-get($colors, white);
+            margin: 0;
+            font-family: $global-hei-font;
+          }
+        }
+        &:after{
+          border: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
