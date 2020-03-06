@@ -1,4 +1,119 @@
 
+@font-face {
+  font-family: 'Great Vibes';
+  src: url("../fonts/GreatVibes-Regular.woff2") format("woff2"), url("../fonts/GreatVibes-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirNextLTProRegular';
+  src: url("../fonts/AvenirNextLTPro-Regular.eot?#iefix") format("../fonts/embedded-opentype"), url("../fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../fonts/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'CenturyGothicRegular';
+  src: url("../fonts/CenturyGothic.eot?#iefix") format("embedded-opentype"), url("../fonts/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic.ttf") format("truetype"), url("../fonts/CenturyGothic.svg#CenturyGothic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PromotionScript';
+  src: url("../fonts/PromotionScript.eot?#iefix") format("embedded-opentype"), url("../fonts/PromotionScript.woff") format("woff"), url("../fonts/PromotionScript.ttf") format("truetype"), url("../fonts/PromotionScript.svg#PromotionScript") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PWSignaturetwo';
+  src: url("../fonts/PWSignaturetwo.eot?#iefix") format("embedded-opentype"), url("../fonts/PWSignaturetwo.woff") format("woff"), url("../fonts/PWSignaturetwo.ttf") format("truetype"), url("../fonts/PWSignaturetwo.svg#PWSignaturetwo") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/nouvelle_vague_final.woff") format("woff"); }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?ly6qde");
+  src: url("../fonts/icomoon.eot?ly6qde#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?ly6qde") format("truetype"), url("../fonts/icomoon.woff?ly6qde") format("woff"), url("../fonts/icomoon.svg?ly6qde#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-icon-twitter:before {
+  content: "\e900"; }
+
+.icon-icon-rdv:before {
+  content: "\e901"; }
+
+.icon-icon-presentation:before {
+  content: "\e902"; }
+
+.icon-icon-pin:before {
+  content: "\e903"; }
+
+.icon-icon-phone:before {
+  content: "\e904"; }
+
+.icon-icon-mouse:before {
+  content: "\e905"; }
+
+.icon-icon-menu:before {
+  content: "\e906"; }
+
+.icon-icon-mail:before {
+  content: "\e907"; }
+
+.icon-icon-linkedin:before {
+  content: "\e908"; }
+
+.icon-icon-home:before {
+  content: "\e909"; }
+
+.icon-icon-hand:before {
+  content: "\e90a"; }
+
+.icon-icon-give-card:before {
+  content: "\e90b"; }
+
+.icon-icon-family:before {
+  content: "\e90c"; }
+
+.icon-icon-facebook:before {
+  content: "\e90d"; }
+
+.icon-icon-expert:before {
+  content: "\e90e"; }
+
+.icon-icon-down-arrow:before {
+  content: "\e90f"; }
+
+.icon-icon-contact:before {
+  content: "\e910"; }
+
+.icon-icon-close:before {
+  content: "\e911"; }
+
+.icon-icon-clock:before {
+  content: "\e912"; }
+
+.icon-icon-arrow:before {
+  content: "\e913"; }
+
 *, ::after, ::before {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -21,7 +136,7 @@ html {
 body {
   background-color: #fff;
   color: #000;
-  font-family: "Open Sans", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   font-size: 1rem;
   margin: 0 auto;
   position: relative;
@@ -37,16 +152,16 @@ h1,
 h3,
 h4,
 h5 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   color: #000; }
 
 h1 {
-  font-size: 34px; }
+  font-size: 100px; }
 
 h2 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   color: #000;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
   padding: 0 0 2rem;
   text-align: center; }
@@ -71,9 +186,9 @@ li,
 a,
 input,
 span {
-  font-family: "Open Sans", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   color: #000;
-  font-size: 20px; }
+  font-size: 18px; }
 
 p {
   margin-bottom: 15px; }
@@ -273,7 +388,7 @@ input[type='email'] {
   top: 0;
   width: 18px;
   height: 18px;
-  border: 1px solid #713611;
+  border: 1px solid #f8094b;
   border-radius: 100%;
   background: transparent; }
 
@@ -281,7 +396,7 @@ input[type='email'] {
   content: '';
   width: 12px;
   height: 12px;
-  background: #713611;
+  background: #f8094b;
   position: absolute;
   top: 3px;
   left: 3px;
@@ -344,6 +459,121 @@ select,
       color: #fff; }
 
 
+@font-face {
+  font-family: 'Great Vibes';
+  src: url("../fonts/GreatVibes-Regular.woff2") format("woff2"), url("../fonts/GreatVibes-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirNextLTProRegular';
+  src: url("../fonts/AvenirNextLTPro-Regular.eot?#iefix") format("../fonts/embedded-opentype"), url("../fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../fonts/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'CenturyGothicRegular';
+  src: url("../fonts/CenturyGothic.eot?#iefix") format("embedded-opentype"), url("../fonts/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic.ttf") format("truetype"), url("../fonts/CenturyGothic.svg#CenturyGothic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PromotionScript';
+  src: url("../fonts/PromotionScript.eot?#iefix") format("embedded-opentype"), url("../fonts/PromotionScript.woff") format("woff"), url("../fonts/PromotionScript.ttf") format("truetype"), url("../fonts/PromotionScript.svg#PromotionScript") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PWSignaturetwo';
+  src: url("../fonts/PWSignaturetwo.eot?#iefix") format("embedded-opentype"), url("../fonts/PWSignaturetwo.woff") format("woff"), url("../fonts/PWSignaturetwo.ttf") format("truetype"), url("../fonts/PWSignaturetwo.svg#PWSignaturetwo") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/nouvelle_vague_final.woff") format("woff"); }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?ly6qde");
+  src: url("../fonts/icomoon.eot?ly6qde#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?ly6qde") format("truetype"), url("../fonts/icomoon.woff?ly6qde") format("woff"), url("../fonts/icomoon.svg?ly6qde#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-icon-twitter:before {
+  content: "\e900"; }
+
+.icon-icon-rdv:before {
+  content: "\e901"; }
+
+.icon-icon-presentation:before {
+  content: "\e902"; }
+
+.icon-icon-pin:before {
+  content: "\e903"; }
+
+.icon-icon-phone:before {
+  content: "\e904"; }
+
+.icon-icon-mouse:before {
+  content: "\e905"; }
+
+.icon-icon-menu:before {
+  content: "\e906"; }
+
+.icon-icon-mail:before {
+  content: "\e907"; }
+
+.icon-icon-linkedin:before {
+  content: "\e908"; }
+
+.icon-icon-home:before {
+  content: "\e909"; }
+
+.icon-icon-hand:before {
+  content: "\e90a"; }
+
+.icon-icon-give-card:before {
+  content: "\e90b"; }
+
+.icon-icon-family:before {
+  content: "\e90c"; }
+
+.icon-icon-facebook:before {
+  content: "\e90d"; }
+
+.icon-icon-expert:before {
+  content: "\e90e"; }
+
+.icon-icon-down-arrow:before {
+  content: "\e90f"; }
+
+.icon-icon-contact:before {
+  content: "\e910"; }
+
+.icon-icon-close:before {
+  content: "\e911"; }
+
+.icon-icon-clock:before {
+  content: "\e912"; }
+
+.icon-icon-arrow:before {
+  content: "\e913"; }
+
 a {
   text-decoration: none; }
   a:hover, a:focus, a:active {
@@ -369,7 +599,7 @@ body {
   font-size: 1rem;
   text-align: left;
   font-weight: 300;
-  font-family: "Open Sans", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   background-color: #fff; }
 
 .fw-light {
