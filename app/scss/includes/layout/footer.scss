@@ -8,16 +8,25 @@
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
     box-sizing: border-box;
     display: flex;
-    .active{
-        display: flex;
-        width: 100%;
+    cursor: pointer;
+    transition: width .3s ease-in-out;
+    &.stretch{
+        width: 684px;
     }
     &__el{
         display: none;
         justify-content: center;
         align-items: center;
+        transition: opacity 3s ease-in-out;
+        opacity: 0;
+        &.active{
+            display: flex;
+            width: 95%;
+            transition: opacity 10s ease-in-out;
+            opacity: 1;
+        }
         &__ic{
-            font-size: 38px;
+            font-size: 30px;
             color: map-get($colors, white);
             margin-right: 10px;
         }
@@ -29,7 +38,7 @@
             display: flex;
             align-items: flex-end;
             padding: 0;
-            margin-right: 50px;
+            margin-right: 40px;
             p, span{
                 color: map-get($colors, white);
             }
@@ -42,6 +51,20 @@
                 margin-left: 5px;
             }
         }
-        
+        &__item{
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+
+            &:first-child{
+                &:after{
+                    content: "";
+                    border: .5px solid #fff;
+                    height: 37px;
+                    margin-left: 50px;
+                }
+            }
+        }
     }
 }

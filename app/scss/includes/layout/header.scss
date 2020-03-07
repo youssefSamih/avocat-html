@@ -2,6 +2,10 @@
   height: 100vh;
   position: fixed;
   width: 130px;
+  transition: width .3s ease-in-out;
+  &.active{
+    width: 93px;
+  }
   &__nav{
     height: 100%;
     background: map-get($colors, white);
@@ -48,9 +52,24 @@
           &__ic{
             font-size: $global-font-nav-icon;
             margin-bottom: 4px;
+            transition: font-size .3s ease-in-out;
+            &.collapsed{
+              transition: font-size .3s ease-in-out;
+              font-size: 38px;
+            }
           }
           &__title{
             font-size: 14px;
+            transform: translate(0);
+            transition: opacity .3s ease-in-out, translate .3s ease-in-out;
+
+            &.collapsed{
+              transition: display .3s ease-in-out, translate .3s ease-in-out;
+              transform: translateY(-5px);
+              opacity: 0;
+              position: absolute;
+              pointer-events: none;
+            }
           }
         }
       }
@@ -96,4 +115,8 @@
       }
     }
   }
+}
+
+.mainActive{
+  margin-left: 5.5rem;
 }
