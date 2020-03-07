@@ -273,7 +273,8 @@ a {
   width: 130px; }
   .sidebar__nav {
     height: 100%;
-    background: #fff; }
+    background: #fff;
+    overflow-y: auto; }
     .sidebar__nav__ul {
       list-style: none;
       padding: 0;
@@ -384,6 +385,61 @@ a {
           border: none;
           margin: 0; }
 
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FB1173), to(#F6073F));
+  background: -webkit-linear-gradient(top, #FB1173 0%, #F6073F 100%);
+  background: linear-gradient(180deg, #FB1173 0%, #F6073F 100%);
+  height: 54px;
+  width: 206px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .footer .active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+  .footer__el {
+    display: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .footer__el__ic {
+      font-size: 38px;
+      color: #fff;
+      margin-right: 10px; }
+    .footer__el__title {
+      height: 32px;
+      width: 61px;
+      font-weight: 500;
+      line-height: 16px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      padding: 0;
+      margin-right: 50px; }
+      .footer__el__title p, .footer__el__title span {
+        color: #fff; }
+      .footer__el__title p {
+        font-size: 18px; }
+      .footer__el__title span {
+        font-size: 24px;
+        margin-bottom: 3px;
+        margin-left: 5px; }
+
 .btn {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -403,7 +459,6 @@ a {
   padding: 15px 25px;
   text-align: center;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   vertical-align: middle;

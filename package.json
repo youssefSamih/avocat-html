@@ -48,6 +48,7 @@
     "gulp-prompt": "^1.0.1",
     "gulp-translate": "^1.5.7",
     "gulp-translation": "^0.6.0",
+    "imagemin-pngquant": "^5.0.1",
     "minimist": "^1.2.0"
   }
 }
