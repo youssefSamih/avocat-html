@@ -3,8 +3,29 @@
   position: fixed;
   width: 130px;
   transition: width .3s ease-in-out;
+  z-index: 10;
+  @media #{$phone} {
+    transition: transform .3s ease-in-out;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      top: 0;
+      left: 130px;
+      z-index: 1;
+      background: rgba(0, 0, 0, .5);
+    }
+  }
   &.active{
     width: 93px;
+    @media #{$phone} {
+      width: 130px;
+      transform: translateX(-100%);
+      &:after{
+        display: none;
+      }
+    }
   }
   &__nav{
     height: 100%;
@@ -47,6 +68,9 @@
           flex-direction: column;
           align-items: center;
           color: map-get($colors, secondary);
+          &.collap{
+            cursor: pointer;
+          }
 
 
           &__ic{
@@ -56,6 +80,9 @@
             &.collapsed{
               transition: font-size .3s ease-in-out;
               font-size: 38px;
+              @media #{$phone} {
+                font-size: $global-font-nav-icon;
+              }
             }
           }
           &__title{
@@ -69,6 +96,12 @@
               opacity: 0;
               position: absolute;
               pointer-events: none;
+              @media #{$phone} {
+                position: unset;
+                pointer-events: unset;
+                opacity: 1;
+                transform: translateY(0);
+              }
             }
           }
         }
@@ -119,4 +152,7 @@
 
 .mainActive{
   margin-left: 5.5rem;
+  @media #{$phone} {
+    margin-left: 0;
+  }
 }

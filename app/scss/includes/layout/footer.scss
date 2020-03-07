@@ -10,8 +10,17 @@
     display: flex;
     cursor: pointer;
     transition: width .3s ease-in-out;
+    z-index: 12;
+    @media #{$phone} {
+        height: 70px;
+        bottom: 0;
+    }
     &.stretch{
         width: 684px;
+        @media #{$phone} {
+            width: 100%;
+            clip-path: none;
+        }
     }
     &__el{
         display: none;
@@ -29,6 +38,14 @@
             font-size: 30px;
             color: map-get($colors, white);
             margin-right: 10px;
+            @media #{$phone} {
+                font-size: 30px;
+                margin-right: 0;
+                &.icon-icon-clock{
+                    font-size: 35px;
+                    margin-right: 10px;
+                }
+            }
         }
         &__title{
             height: 32px;
@@ -39,11 +56,22 @@
             align-items: flex-end;
             padding: 0;
             margin-right: 40px;
+            @media #{$phone} {
+                margin-right: 5px;
+            }
             p, span{
                 color: map-get($colors, white);
             }
             p{
                 font-size: 18px;
+                @media #{$phone} {
+                    font-size: 15px;
+                    &.footer{
+                        &__responsive{
+                            font-size: 20px;
+                        }
+                    }
+                }
             }
             span {
                 font-size: 24px;
@@ -57,12 +85,19 @@
             justify-content: center;
             align-items: center;
 
+            @media #{$phone} {
+                flex-direction: column;
+            }
+
             &:first-child{
                 &:after{
                     content: "";
                     border: .5px solid #fff;
                     height: 37px;
                     margin-left: 50px;
+                    @media #{$phone} {
+                        display: none;
+                    }
                 }
             }
         }

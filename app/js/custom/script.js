@@ -1,13 +1,18 @@
 "use strict";
 
 var AV = AV || {};
-
+var url = window.location.href.split('/')[3];
 $(document).ready(function () {
+  $(window).on('hashchange', function(e){
+    url = window.location.href.split('/')[3];
+    $(".nav-item__link").removeClass("active");
+    $("a[href='"+ url +"']").toggleClass("active");
+   });
   $(".toggle").click(function(){
     $(".footer").toggleClass("stretch");
     $(".footer__el").toggleClass("active");
   });
-  $("#collapse").click(function(){
+  $(".collap").click(function(){
     $(".sidebar").toggleClass("active");
     $("main").toggleClass("mainActive");
     $(".nav-item__link__title").toggleClass("collapsed");

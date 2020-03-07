@@ -39,6 +39,9 @@ main {
   width: 100%;
   margin-left: 8rem;
   transition: margin .3s ease-in-out;
+  @media #{$phone} {
+    margin-left: 0;
+  }
 }
 // hr
 hr {
