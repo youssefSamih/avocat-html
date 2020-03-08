@@ -1,10 +1,27 @@
 <section class="lame lame-contact">
-  <div>
-    <div class="container">
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
+  <div class="lame-contact__section">
+    <div class="row">
+      {% for item in items %}
+        <div class="col-md-{{ item.col }} col-xs-12">
+          {% if item.form %}
+            <div class="lame-contact__section__form">
+              <h2 class="form__title animated zoomIn">Contactez-nous</h2>
+              <p class="form__adress animated zoomIn">Adresse du cabinet : 42, avenue du Maréchal Foch, SENLIS (60300).</p>
+              <form class="form__inputs">
+                {% for input in item.inputElements %}
+                  {% include "../elements/input.twig" with {
+                    id: input.id,
+                    labelText: input.labelText,
+                    type: input.type,
+                  } %}
+                {% endfor %}
+                <label for="msg" class="float-label animated zoomIn">Message</label>
+                <textarea name="" id="msg" cols="30" rows="5" class="form__inputs__textarea floating-label-field animated zoomIn"></textarea>
+              </form>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>

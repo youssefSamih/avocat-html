@@ -205,6 +205,38 @@ Avocat
         }
       ]
     } %}
-    {% include "../lames/lame-contact.twig" %}
+    {% include "../lames/lame-contact.twig" with {
+      items: [
+        {
+          col: "7",
+          form: true,
+          inputElements: [
+            {
+              id: "name",
+              labelText: "Votre nom",
+              type: "text"
+            },
+            {
+              id: "lastname",
+              labelText: "Votre prénom",
+              type: "text"
+            },
+            {
+              id: "mail",
+              labelText: "Adresse mail",
+              type: "email"
+            },
+            {
+              id: "sujet",
+              labelText: "Sujet",
+              type: "text"
+            }
+          ]
+        },
+        {
+          col: "5"
+        }
+      ]
+    } %}
   </div>
 {% endblock %}
