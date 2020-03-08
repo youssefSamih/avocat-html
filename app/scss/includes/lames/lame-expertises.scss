@@ -78,6 +78,9 @@
         }
         &__content{
             padding: 0 99px;
+            @media #{$tablet} {
+                padding: 5px;
+            }
             .cols{
                 display: flex;
                 flex-direction: column;
@@ -96,6 +99,10 @@
                     margin-top: 40.1px;
                     animation-duration: 3s;
                     animation-delay: 1s;
+                    @media #{$tablet_large} {
+                        margin-top: 80.1px;
+                        margin-bottom: 80.1px;
+                    }
                 }
                 &__items{
                     padding: 0;

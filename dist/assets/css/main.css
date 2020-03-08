@@ -1235,6 +1235,9 @@ select,
           padding: 0 30px; } }
     .lame-expertises__section__content {
       padding: 0 99px; }
+      @media screen and (max-width: 992px) {
+        .lame-expertises__section__content {
+          padding: 5px; } }
       .lame-expertises__section__content .cols {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1265,6 +1268,10 @@ select,
           animation-duration: 3s;
           -webkit-animation-delay: 1s;
           animation-delay: 1s; }
+          @media screen and (max-width: 1024px) {
+            .lame-expertises__section__content .cols__title {
+              margin-top: 80.1px;
+              margin-bottom: 80.1px; } }
         .lame-expertises__section__content .cols__items {
           padding: 0;
           width: 100%;
