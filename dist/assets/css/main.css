@@ -1397,6 +1397,17 @@ select,
             @media screen and (max-width: 768px) {
               .lame-contact__section__form .form__inputs__textarea {
                 width: 100% !important; } }
+        .lame-contact__section__form .form__submit {
+          width: 20%;
+          background-color: #f8094b;
+          padding: 10px 0;
+          color: #fff;
+          font-size: 20px;
+          line-height: 27px;
+          font-family: "AvenirNextLTProRegular",sans-serif;
+          border: none; }
+          .lame-contact__section__form .form__submit:focus {
+            outline: none; }
 
 
 @font-face {

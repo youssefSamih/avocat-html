@@ -69,6 +69,19 @@
                         }
                     }
                 }
+                &__submit{
+                    width: 20%;
+                    background-color: map-get($colors, primary);
+                    padding: 10px 0;
+                    color: map-get($colors, white);
+                    font-size: 20px;
+                    line-height: 27px;
+                    font-family: "AvenirNextLTProRegular",sans-serif;
+                    border: none;
+                    &:focus{
+                        outline: none;
+                    }
+                }
             }
         }
     }
