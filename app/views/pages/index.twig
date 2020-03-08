@@ -4,7 +4,8 @@ Avocat
 {% endblock %}
 {% block main %}
   <div id="main" class="scroll-container">
-    {% include "../lames/lame-home.twig" with {
+    {% include "../lames/lame-home.twig" with 
+    {
       items: [
         {
           header: true,
@@ -26,10 +27,38 @@ Avocat
         {
           hasTitle: true
         },
-        {},
-        {},
+        {
+          hasChild: true,
+          child: [
+            {
+              classDiv: "col-md-3",
+              hasImg: true
+            },
+            {
+              classDiv: "col-md-6",
+              hasDescription: true
+            },
+            {
+              classDiv: "col-md-2",
+              hasIcon: true
+            },
+          ]
+        },
+        {
+          hasJustIcon: true,
+          icon: [
+            {
+              ic: "mouse",
+            },
+            {
+              ic: "down-arrow",
+              id: "mouseMouve"
+            }
+          ]
+        },
       ]
-    } %}
+    } 
+    %}
     {% include "../lames/lame-presentation.twig" %}
     {% include "../lames/lame-expertises.twig" %}
     {% include "../lames/lame-contact.twig" %}

@@ -1,20 +1,6 @@
-"use strict";
-
-var AV = AV || {};
-
-$(document).ready(function () {
-	AV.lameHome.init();
-	AV.lameSkeleton.init();
-});
-
-AV.lameHome = {
-	init: function () {
-		setInterval(function(){
-			$('#mouseMouve').toggleClass("mouseMouve");
-		}, 900);
-	}
-};
-
+/*
+ * lameSkeleton Functions
+ * */
 var url = window.location.href.split('/')[3];
 AV.lameSkeleton = {
 	init: function () {

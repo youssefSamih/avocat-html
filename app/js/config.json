@@ -1,6 +1,9 @@
 {
   "strict": true,
   "ready": true,
-  "fragments": {},
+  "fragments": {
+    "lameHome": true,
+    "lameSkeleton": true
+  },
   "namespace": "AV"
 }

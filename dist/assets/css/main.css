@@ -56,7 +56,6 @@
 [class^="icon-"], [class*=" icon-"] {
   
   font-family: 'icomoon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -853,8 +852,92 @@ select,
       width: 732.93px;
       padding: 0 214.7px;
       margin-top: 34.25px;
+      margin-bottom: 34.25px;
       color: #f8094b;
       font-family: 'AvenirNextLTProRegular'; }
+    .lame-home__section__details {
+      padding: 40px 0 0 208px; }
+      .lame-home__section__details__img {
+        height: 187px;
+        width: 190px;
+        border: 1px solid #f8094b; }
+        .lame-home__section__details__img, .lame-home__section__details__img img {
+          border-radius: 100%; }
+        .lame-home__section__details__img img {
+          height: 100%; }
+      .lame-home__section__details .row .col-md-3:first-child {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .lame-home__section__details .row .col-md-3:first-child:after {
+          content: '';
+          border: .5px solid #f8094b;
+          height: 258px;
+          position: absolute;
+          bottom: -20px;
+          left: 285px; }
+      .lame-home__section__details__description {
+        padding-left: 51px; }
+        .lame-home__section__details__description p, .lame-home__section__details__description a {
+          color: #fff; }
+        .lame-home__section__details__description a {
+          line-height: 27px;
+          font-size: 20px; }
+        .lame-home__section__details__description p {
+          font-size: 18px;
+          line-height: 25px; }
+        .lame-home__section__details__description .description__button {
+          margin-top: 32px; }
+          .lame-home__section__details__description .description__button a {
+            padding: 11px 29px;
+            border: 1px solid;
+            -webkit-transition: .5s ease;
+            transition: .5s ease; }
+            .lame-home__section__details__description .description__button a:first-child {
+              margin-right: 15px; }
+            .lame-home__section__details__description .description__button a:hover {
+              -webkit-transition: .5s ease;
+              transition: .5s ease;
+              background-color: #f8094b;
+              border: 1px solid #f8094b; }
+      .lame-home__section__details__more p {
+        color: #f8094b;
+        font-size: 16px;
+        line-height: 22px; }
+      .lame-home__section__details__more i {
+        color: #f8094b;
+        font-size: 26px;
+        position: absolute;
+        left: 40px; }
+    .lame-home__section__icon {
+      padding: 102px 674px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .lame-home__section__icon i {
+        color: #fff;
+        font-size: 30px;
+        -webkit-transition: -webkit-transform .9s ease-in-out;
+        transition: -webkit-transform .9s ease-in-out;
+        transition: transform .9s ease-in-out;
+        transition: transform .9s ease-in-out, -webkit-transform .9s ease-in-out; }
+        .lame-home__section__icon i:first-child {
+          font-size: 41px; }
+        .lame-home__section__icon i.mouseMouve {
+          -webkit-transition: -webkit-transform .9s ease-in-out;
+          transition: -webkit-transform .9s ease-in-out;
+          transition: transform .9s ease-in-out;
+          transition: transform .9s ease-in-out, -webkit-transform .9s ease-in-out;
+          -webkit-transform: translateY(10px);
+          -ms-transform: translateY(10px);
+          transform: translateY(10px); }
 
 
 @font-face {
@@ -914,7 +997,6 @@ select,
 [class^="icon-"], [class*=" icon-"] {
   
   font-family: 'icomoon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

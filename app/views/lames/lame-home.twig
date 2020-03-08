@@ -14,6 +14,45 @@
         {% if item.hasTitle %}
           <h1 class="lame-home__section__title">Sabrina BOUGOUFA</h1>
         {% endif %}
+        {% if item.hasChild %}
+          <div class="lame-home__section__details">
+            <div class="row">
+              {% for child in item.child %}
+                <div class="{{ child.classDiv }}">
+                  {% if child.hasImg %}
+                    <div class="lame-home__section__details__img">
+                      <img src="assets/imgs/userImg/profile.jpg" alt="Sabrina BOUGOUFA">
+                    </div>
+                  {% endif %}
+                  {% if child.hasDescription %}
+                    <div class="lame-home__section__details__description">
+                      <p>
+                        Avocat à Creil, Maître Sabrina BOUGOUFA intervient tant en matière de conseil que de contentieux, principalement en Droit pénal et Droit de la famille, des personnes et de leur patrimoine
+                      </p>
+                      <div class="description__button">
+                        <a href="#">Prendre RDV</a>
+                        <a href="#">Consulter par écrit</a>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if child.hasIcon %}
+                    <div class="lame-home__section__details__more">
+                      <p>La suite</p>
+                      <i class="icon-icon-arrow"></i>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+        {% if item.hasJustIcon %}
+          <div class="lame-home__section__icon">
+            {% for icon in item.icon %}
+            <i class="icon-icon-{{ icon.ic }}" id="{{ icon.id }}"></i>
+            {% endfor %}
+          </div>
+        {% endif %}
     {% endfor %}
   </div>
 </section>

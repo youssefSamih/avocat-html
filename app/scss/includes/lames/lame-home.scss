@@ -44,8 +44,100 @@
             width: 732.93px;
             padding: 0 214.7px;
             margin-top: 34.25px;
+            margin-bottom: 34.25px;
             color: map-get($colors, primary);
             font-family: 'AvenirNextLTProRegular';
+        }
+        &__details{
+            padding: 40px 0 0 208px;
+            &__img{
+                height: 187px;
+                width: 190px;
+                border: 1px solid map-get($colors, primary);
+                
+                &, img{
+                    border-radius: 100%;
+                }
+                img{
+                    height: 100%;
+                }
+            }
+            .row{
+                .col-md-3:first-child{
+                    display: flex;
+                    &:after{
+                        content: '';
+                        border: .5px solid #f8094b;
+                        height: 258px;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 285px;
+                    }
+                }    
+            }
+            &__description{
+                padding-left: 51px;
+                p, a{
+                    color: map-get($colors, white);
+                }
+                a{
+                    line-height: 27px;
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+                .description{
+                    &__button{
+                        margin-top: 32px;
+                        a{
+                            padding: 11px 29px;
+                            border: 1px solid;
+                            transition: .5s ease;
+                            &:first-child{
+                                margin-right: 15px;
+                            }
+                            &:hover{
+                                transition: .5s ease;
+                                background-color: map-get($colors, primary);
+                                border: 1px solid map-get($colors, primary);
+                            }
+                        }
+                    }
+                }
+            }
+            &__more{
+                p{
+                    color: map-get($colors, primary);
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+                i{
+                    color: map-get($colors, primary);
+                    font-size: 26px;
+                    position: absolute;
+                    left: 40px;
+                }
+            }
+        }
+        &__icon{ 
+            padding: 102px 674px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            i{
+                color: map-get($colors, white);
+                font-size: 30px;
+                transition: transform .9s ease-in-out;
+                &:first-child{
+                    font-size: 41px;
+                }
+                &.mouseMouve{
+                    transition: transform .9s ease-in-out;
+                    transform: translateY(10px);
+                }
+            }
         }
     }
 }
