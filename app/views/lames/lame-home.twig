@@ -3,6 +3,7 @@
     {% for item in items %}
         {% if item.header %}
           <ul class="lame-home__section__social">
+            <li class="lame-home__section__social__ic collap"><i class="icon-icon-{{ item.leftPosition }}"></i></li>
             {% for item in item.icon %}
               <li class="lame-home__section__social__ic"><i class="icon-icon-{{ item.icon }}"></i></li>
             {% endfor %}
