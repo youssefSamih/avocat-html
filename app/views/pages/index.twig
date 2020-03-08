@@ -4,7 +4,32 @@ Avocat
 {% endblock %}
 {% block main %}
   <div id="main" class="scroll-container">
-    {% include "../lames/lame-home.twig" %}
+    {% include "../lames/lame-home.twig" with {
+      items: [
+        {
+          header: true,
+          icon: [
+            {
+              icon: "twitter"
+            },
+            {
+              icon: "facebook"
+            },
+            {
+              icon: "linkedin"
+            }
+          ]
+        },
+        {
+          hasSubtitle: true
+        },
+        {
+          hasTitle: true
+        },
+        {},
+        {},
+      ]
+    } %}
     {% include "../lames/lame-presentation.twig" %}
     {% include "../lames/lame-expertises.twig" %}
     {% include "../lames/lame-contact.twig" %}

@@ -1,3 +1,51 @@
 .lame-home	{
-
+    flex-direction: column;
+    background-image: url("../../assets/imgs/backgrounds/slide01.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &:before {
+        content: "";
+        position: absolute;
+        opacity: 0.86;
+        background-color: map-get($colors, backgroundOverlayBlack);
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+    }
+    &__section{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &__social{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            padding: 34px 34px 0 0;
+            &__ic{
+                margin-right: 16px;
+                font-size: 27px;
+                color: map-get($colors, primary);
+            }
+        }
+        &__subTitle{
+            display: flex;
+            padding: 0 250px;
+            font-family: 'Casablanca Noir Personal Use';
+            font-size: 48px;
+            letter-spacing: 2.98px;
+            line-height: 58px;
+            color: map-get($colors, white);
+            font-weight: 100;
+        }
+        &__title{
+            height: 226.08px;
+            width: 732.93px;
+            padding: 0 214.7px;
+            margin-top: 34.25px;
+            color: map-get($colors, primary);
+            font-family: 'AvenirNextLTProRegular';
+        }
+    }
 }

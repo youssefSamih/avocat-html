@@ -55,6 +55,14 @@
 }
 
 @font-face {
+  font-family: 'Casablanca Noir Personal Use';
+  src: url('../fonts/CasablancaNoirPersonalUse-Regul.woff2') format('woff2'),
+      url('../fonts/CasablancaNoirPersonalUse-Regul.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot?ly6qde');
   src:  url('../fonts/icomoon.eot?ly6qde#iefix') format('embedded-opentype'),

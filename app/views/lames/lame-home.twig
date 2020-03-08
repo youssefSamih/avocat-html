@@ -1,10 +1,19 @@
 <section class="lame lame-home section">
-  <div>
-    <div class="container">
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-      <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem illum delectus, blanditiis suscipit mollitia! Error ullam recusandae cupiditate culpa, rem adipisci voluptates officiis et amet ea itaque ipsa reiciendis.</p>
-    </div>
+  <div class="lame-home__section">
+    {% for item in items %}
+        {% if item.header %}
+          <ul class="lame-home__section__social">
+            {% for item in item.icon %}
+              <li class="lame-home__section__social__ic"><i class="icon-icon-{{ item.icon }}"></i></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if item.hasSubtitle %}
+          <h2 class="lame-home__section__subTitle">maitre</h2>
+        {% endif %}
+        {% if item.hasTitle %}
+          <h1 class="lame-home__section__title">Sabrina BOUGOUFA</h1>
+        {% endif %}
+    {% endfor %}
   </div>
 </section>

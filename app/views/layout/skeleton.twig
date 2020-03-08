@@ -17,8 +17,8 @@
     {% include 'header.twig' with {
       classLi: "nav-item",
       classA: "nav-item__link",
-      classIcon: "nav-item__link__ic",
-      classTitle: "nav-item__link__title",
+      classIcon: "nav-item__link__ic collapsed",
+      classTitle: "nav-item__link__title collapsed",
       items: [
         {
           classActive: "active",
@@ -43,7 +43,7 @@
         },
       ]
     } %}
-    <main>
+    <main class="mainActive">
         {% block main %}{% endblock %}
     </main>
     {% include 'footer.twig' with {
