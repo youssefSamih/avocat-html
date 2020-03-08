@@ -8,10 +8,9 @@
         </a>
       </li>
       <li class="nav-item"><a class="nav-item__link collap"><i class="nav-item__link__ic icon-icon-menu"></i></a></li>
-      <li class="nav-item"><a href="#0" class="nav-item__link active"><i class="nav-item__link__ic icon-icon-home"></i><p class="nav-item__link__title">Accueil</p></a></li>
-      <li class="nav-item"><a href="#1" class="nav-item__link"><i class="nav-item__link__ic icon-icon-presentation"></i><p class="nav-item__link__title">Presentation</p></a></li>
-      <li class="nav-item"><a href="#2" class="nav-item__link"><i class="nav-item__link__ic icon-icon-expert"></i><p class="nav-item__link__title">Expertises</p></a></li>
-      <li class="nav-item"><a href="#3" class="nav-item__link"><i class="nav-item__link__ic icon-icon-contact"></i><p class="nav-item__link__title">Contact</p></a></li>
+      {% for item in items %}
+        <li class="{{ classLi }}"><a href="{{ item.link }}" class="{{ classA }} {{ item.classActive }}"><i class="{{ classIcon }} {{ item.classIcon }}"></i><p class="{{ classTitle }}">{{item.content}}</p></a></li>
+      {% endfor %}
     </ul>
   </nav>
 </header>

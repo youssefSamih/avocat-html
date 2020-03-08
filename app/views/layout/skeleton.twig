@@ -14,11 +14,72 @@
 
 
   <body>
-    {% include 'header.twig' %}
+    {% include 'header.twig' with {
+      classLi: "nav-item",
+      classA: "nav-item__link",
+      classIcon: "nav-item__link__ic",
+      classTitle: "nav-item__link__title",
+      items: [
+        {
+          classActive: "active",
+          classIcon: "icon-icon-home",
+          content: "Accueil",
+          link: "#0",
+        },
+        {
+          classIcon: "icon-icon-presentation",
+          content: "Presentation",
+          link: "#1",
+        },
+        {
+          classIcon: "icon-icon-expert",
+          content: "Expertises",
+          link: "#2",
+        },
+        {
+          classIcon: "icon-icon-contact",
+          content: "Contact",
+          link: "#3",
+        },
+      ]
+    } %}
     <main>
         {% block main %}{% endblock %}
     </main>
-    {% include 'footer.twig' %}
+    {% include 'footer.twig' with {
+      items: [
+        {
+          classDiv: "footer__el toggle active",
+          hasNoChild: true,
+        },
+        {
+          classDiv: "footer__el",
+          child: [
+            {
+              classChild: "footer__el__item toggle",
+              hasNoChild: true,
+            },
+            {
+              classChild: "footer__el__item",
+              items: [
+                {
+                  icon : "rdv",
+                  content: "Prendre RDV",
+                },
+                {
+                  icon : "phone",
+                  content: "Demander un rappel",
+                },
+                {
+                  icon : "mail",
+                  content: "Consulter par écrit",
+                },
+              ]
+            }
+          ]
+        }
+      ]
+    } %}
 
     <script src="assets/js/vendor/libs.js"></script>
     <script src="assets/js/main.min.js"></script>
