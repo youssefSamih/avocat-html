@@ -247,6 +247,12 @@ a {
   margin-right: auto;
   margin-left: auto; }
 
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s; }
+
 .fw-light {
   font-weight: 300; }
 
@@ -1216,7 +1222,11 @@ select,
       color: #f8094b;
       font-weight: 100;
       opacity: 0.91;
-      height: 96px; }
+      height: 96px;
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s; }
       @media screen and (max-width: 1024px) {
         .lame-expertises__section__subTitle {
           padding: 0 100px; } }
@@ -1250,7 +1260,36 @@ select,
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
-          margin-top: 40.1px; }
+          margin-top: 40.1px;
+          -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+          -webkit-animation-delay: 1s;
+          animation-delay: 1s; }
+        .lame-expertises__section__content .cols__items {
+          padding: 0;
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          list-style: none;
+          -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+          -webkit-animation-delay: 1s;
+          animation-delay: 1s; }
+        .lame-expertises__section__content .cols__item {
+          color: #fff;
+          margin-bottom: 10px; }
+          .lame-expertises__section__content .cols__item, .lame-expertises__section__content .cols__item:before {
+            font-size: 15px;
+            line-height: 20px; }
+          .lame-expertises__section__content .cols__item:before {
+            content: "\2022";
+            color: #f8094b;
+            margin-right: 5px; }
 
 
 @font-face {

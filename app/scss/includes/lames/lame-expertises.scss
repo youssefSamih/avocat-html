@@ -67,6 +67,8 @@
             font-weight: 100;
             opacity: 0.91;
             height: 96px;
+            animation-duration: 3s;
+            animation-delay: 1s;
             @media #{$tablet_large} {
                 padding: 0 100px;
             }
@@ -92,6 +94,30 @@
                     display: flex;
                     align-items: center;
                     margin-top: 40.1px;
+                    animation-duration: 3s;
+                    animation-delay: 1s;
+                }
+                &__items{
+                    padding: 0;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+                    animation-duration: 3s;
+                    animation-delay: 1s;
+                }
+                &__item{
+                    color: map-get($colors, white);
+                    margin-bottom: 10px;
+                    &, &:before{
+                        font-size: 15px;
+                        line-height: 20px;
+                    }
+                    &:before{
+                        content: "\2022"; 
+                        color: map-get($colors, primary);
+                        margin-right: 5px;
+                    }
                 }
             }
         }
