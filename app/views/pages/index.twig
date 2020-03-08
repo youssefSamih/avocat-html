@@ -60,7 +60,37 @@ Avocat
       ]
     } 
     %}
-    {% include "../lames/lame-presentation.twig" %}
+    {% include "../lames/lame-presentation.twig" with {
+      items: [
+        {
+          header: true,
+          leftPosition: "menu",
+          icon: [
+            {
+              icon: "twitter"
+            },
+            {
+              icon: "facebook"
+            },
+            {
+              icon: "linkedin"
+            }
+          ]
+        },
+        {
+          hasSubtitle: true
+        },
+        {
+          hasTitle: true
+        },
+        {
+          hasDescription: true
+        },
+        {
+          hasSign: true
+        }
+      ]
+    } %}
     {% include "../lames/lame-expertises.twig" %}
     {% include "../lames/lame-contact.twig" %}
   </div>

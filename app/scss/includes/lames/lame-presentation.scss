@@ -1,3 +1,114 @@
 .lame-presentation	{
+    flex-direction: column;
+    background-image: url("../../assets/imgs/backgrounds/slide02.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &:before {
+        content: "";
+        position: absolute;
+        opacity: 0.86;
+        background-color: map-get($colors, white);
+        height: 100%;
+        width: 100%;
+        opacity: 0.88;
+        pointer-events: none;
+    }
+    &__section{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        @media #{$phone} {
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-bottom: 100px;
+        }
+        &__social{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            padding: 34px 80px 0 0;
+            @media #{$tablet_large} {
+                padding: 34px 100px 0 0;
+            }
+            @media #{$phone} {
+                padding: 34px 5px 0 0;
+            }
 
+            &__ic{
+                margin-right: 16px;
+                font-size: 27px;
+                color: map-get($colors, primary);
+
+                &.collap{
+                    display: none;
+                    cursor: pointer;
+                    @media #{$tablet} {
+                        display: block;
+                        position: relative;
+                        left: 0;
+                        margin-right: 74%;
+                    }
+                    @media (max-width: 415px) {
+                        margin-right: 50%;
+                    }
+                }
+            }
+        }
+        &__subTitle{
+            display: flex;
+            padding: 0 96px;
+            font-size: 24px;
+            line-height: 33px;
+            color: map-get($colors, primary);
+            font-weight: 100;
+            opacity: 0.91;
+            @media #{$tablet_large} {
+                padding: 0 100px;
+            }
+            @media #{$phone} {
+                padding: 0 30px;
+            }
+        }
+        &__title{
+            width: 90%;
+            padding: 0 96px;
+            margin-top: 34.25px;
+            margin-bottom: 34.25px;
+            color: map-get($colors, secondary);
+            font-family: 'CenturyGothicRegular';
+            font-size: 80px;
+            line-height: 98px;
+            @media #{$tablet_large} {
+                padding: 0 100px;
+            }
+            @media #{$phone} {
+                padding: 0 15px;
+                font-size: 30px;
+                height: auto;
+                width: 100%;
+                line-height: 30px;
+            }
+        }
+        &__details{
+            padding: 0 96px;
+            width: 90%;
+            @media #{$tablet} {
+                padding: 0 15px;
+            }
+            p{
+                font-size: 22px;
+            }
+        }
+        &__signature{
+            font-family: PWSignaturetwo;
+            width: 90%;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 72px;
+            font-weight: 500;
+            line-height: 128px;
+        }
+    }
 }
