@@ -91,7 +91,25 @@ Avocat
         }
       ]
     } %}
-    {% include "../lames/lame-expertises.twig" %}
+    {% include "../lames/lame-expertises.twig" with {
+      items: [
+        {
+          header: true,
+          leftPosition: "menu",
+          icon: [
+            {
+              icon: "twitter"
+            },
+            {
+              icon: "facebook"
+            },
+            {
+              icon: "linkedin"
+            }
+          ]
+        },
+      ]
+    } %}
     {% include "../lames/lame-contact.twig" %}
   </div>
 {% endblock %}
