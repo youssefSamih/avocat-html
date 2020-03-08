@@ -9,6 +9,23 @@
           {% endfor %}
         </ul>
       {% endif %}
+      {% if item.hasSubtitle %}
+        <h2 class="lame-expertises__section__subTitle animated zoomIn">Expertises</h2>
+      {% endif %}
+      {% if item.hasColumn %}
+        <div class="lame-expertises__section__content">
+          <div class="row">
+            {% for col in item.columns %}
+              <div class="col-md-4 col-xs-12">
+                <div class="cols">
+                  <i class="cols__ic icon-icon-{{ col.icon }}"></i>
+                  <h2 class="cols__title">{{ col.contentH2 }}</h2>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 </section>

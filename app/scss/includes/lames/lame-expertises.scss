@@ -58,5 +58,42 @@
                 }
             }
         }
+        &__subTitle{
+            display: flex;
+            padding: 0 96px;
+            font-size: 24px;
+            line-height: 33px;
+            color: map-get($colors, primary);
+            font-weight: 100;
+            opacity: 0.91;
+            height: 96px;
+            @media #{$tablet_large} {
+                padding: 0 100px;
+            }
+            @media #{$phone} {
+                padding: 0 30px;
+            }
+        }
+        &__content{
+            padding: 0 99px;
+            .cols{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &__ic {
+                    color: map-get($colors, white);
+                    font-size: 80px;
+                }
+                &__title{
+                    color: map-get($colors, white);
+                    height: 108px;
+                    font-size: 36px;
+                    line-height: 36px;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 40.1px;
+                }
+            }
+        }
     }
 }

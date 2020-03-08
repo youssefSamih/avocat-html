@@ -1206,6 +1206,51 @@ select,
           @media (max-width: 415px) {
             .lame-expertises__section__social__ic.collap {
               margin-right: 50%; } }
+    .lame-expertises__section__subTitle {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0 96px;
+      font-size: 24px;
+      line-height: 33px;
+      color: #f8094b;
+      font-weight: 100;
+      opacity: 0.91;
+      height: 96px; }
+      @media screen and (max-width: 1024px) {
+        .lame-expertises__section__subTitle {
+          padding: 0 100px; } }
+      @media screen and (max-width: 768px) {
+        .lame-expertises__section__subTitle {
+          padding: 0 30px; } }
+    .lame-expertises__section__content {
+      padding: 0 99px; }
+      .lame-expertises__section__content .cols {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .lame-expertises__section__content .cols__ic {
+          color: #fff;
+          font-size: 80px; }
+        .lame-expertises__section__content .cols__title {
+          color: #fff;
+          height: 108px;
+          font-size: 36px;
+          line-height: 36px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          margin-top: 40.1px; }
 
 
 @font-face {
