@@ -9,15 +9,23 @@
         position: relative;
         .row{
             height: 100%;
-            .col-md-7{
-                background-color: map-get($colors, backgroundOverlayBlack);
+            .col-lg-7{
+                background-color: #1D1B26;
+                @media #{$phone} {
+                    height: 50%;
+                    width: 100%;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                }
             }
         }
         &__form{
             height: 50%;
             box-sizing: border-box;
             padding: 34px 82.5px;
-
+            @media #{$phone} {
+                padding: 14px 0;
+            }
             .form{
                 overflow-y: auto;
                 overflow-x: hidden;
@@ -32,7 +40,7 @@
                     animation-duration: 3s;
                     animation-delay: 1s;
                     @media #{$tablet_large} {
-                        padding: 0 100px;
+                        padding: 0;
                     }
                     @media #{$phone} {
                         padding: 0 30px;
@@ -50,13 +58,13 @@
                     flex-direction: column;
 
                     &__textarea {
-                        width: 603px !important;
+                        width: 100% !important;
                         border: 3px solid #979797 !important;
                         height: 15.44%;
-                        @media (max-width: $tablet) {
+                        @media #{$tablet} {
                             width: 70% !important;
                         }
-                        @media (max-width: $phone) {
+                        @media #{$phone} {
                             width: 100% !important;
                         }
                     }
