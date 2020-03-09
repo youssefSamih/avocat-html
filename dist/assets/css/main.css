@@ -287,6 +287,10 @@ a {
   .lame-spaced-not-top {
     padding-top: 0; }
 
+@media screen and (max-width: 768px) {
+  .mainActive {
+    overflow-y: auto; } }
+
 .sidebar {
   height: 100vh;
   position: fixed;
@@ -472,6 +476,33 @@ a {
   @media screen and (max-width: 768px) {
     .mainActive {
       margin-left: 0; } }
+
+.header {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: fixed;
+      z-index: 10;
+      width: 100%; }
+      .header__social {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        .header__social__ic, .header__social__ic a {
+          margin-right: 16px;
+          font-size: 27px;
+          color: #f8094b; }
+          .header__social__ic:first-child, .header__social__ic a:first-child {
+            margin-right: 50%; } }
 
 .footer {
   position: absolute;
@@ -862,8 +893,6 @@ select,
     position: relative; }
     @media screen and (max-width: 768px) {
       .lame-home__section {
-        overflow-y: auto;
-        overflow-x: hidden;
         padding-bottom: 100px; } }
     .lame-home__section__social {
       list-style: none;
@@ -880,8 +909,8 @@ select,
           padding: 34px 100px 0 0; } }
       @media screen and (max-width: 768px) {
         .lame-home__section__social {
-          padding: 34px 5px 0 0; } }
-      .lame-home__section__social__ic a {
+          display: none; } }
+      .lame-home__section__social__ic, .lame-home__section__social__ic a {
         margin-right: 16px;
         font-size: 27px;
         color: #f8094b; }
@@ -1088,8 +1117,6 @@ select,
     position: relative; }
     @media screen and (max-width: 768px) {
       .lame-presentation__section {
-        overflow-y: auto;
-        overflow-x: hidden;
         padding-bottom: 100px; } }
     .lame-presentation__section__social {
       list-style: none;
@@ -1106,7 +1133,8 @@ select,
           padding: 34px 100px 0 0; } }
       @media screen and (max-width: 768px) {
         .lame-presentation__section__social {
-          padding: 34px 5px 0 0; } }
+          padding: 34px 5px 0 0;
+          display: none; } }
       .lame-presentation__section__social__ic a {
         margin-right: 16px;
         font-size: 27px;
@@ -1166,6 +1194,9 @@ select,
           padding: 0 15px; } }
       .lame-presentation__section__details p {
         font-size: 22px; }
+        @media screen and (max-width: 992px) {
+          .lame-presentation__section__details p {
+            font-size: 13px; } }
     .lame-presentation__section__signature {
       font-family: PWSignaturetwo;
       width: 90%;
@@ -1223,7 +1254,8 @@ select,
           padding: 34px 100px 0 0; } }
       @media screen and (max-width: 768px) {
         .lame-expertises__section__social {
-          padding: 34px 5px 0 0; } }
+          padding: 34px 5px 0 0;
+          display: none; } }
       .lame-expertises__section__social__ic a {
         margin-right: 16px;
         font-size: 27px;
@@ -1347,12 +1379,27 @@ select,
             height: 50%;
             width: 100%;
             overflow-y: auto;
-            overflow-x: hidden; } }
+            overflow-x: hidden;
+            border-bottom: 10px solid #1d1b26; } }
     .lame-contact__section__form {
       height: 50%;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 34px 82.5px; }
+      .lame-contact__section__form .icon-icon-menu {
+        font-size: 27px;
+        color: #f8094b; }
+        @media screen and (max-width: 768px) {
+          .lame-contact__section__form .icon-icon-menu {
+            display: none !important; } }
+        .lame-contact__section__form .icon-icon-menu.collap {
+          display: none;
+          cursor: pointer; }
+          @media screen and (max-width: 992px) {
+            .lame-contact__section__form .icon-icon-menu.collap {
+              display: block;
+              position: relative;
+              left: 0; } }
       @media screen and (max-width: 768px) {
         .lame-contact__section__form {
           padding: 14px 0; } }
@@ -1412,6 +1459,9 @@ select,
           line-height: 27px;
           font-family: "AvenirNextLTProRegular",sans-serif;
           border: none; }
+          @media screen and (max-width: 1024px) {
+            .lame-contact__section__form .form__submit {
+              width: 40%; } }
           .lame-contact__section__form .form__submit:focus {
             outline: none; }
 

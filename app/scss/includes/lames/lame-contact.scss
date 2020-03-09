@@ -16,6 +16,7 @@
                     width: 100%;
                     overflow-y: auto;
                     overflow-x: hidden;
+                    border-bottom: 10px solid #1d1b26;
                 }
             }
         }
@@ -23,6 +24,23 @@
             height: 50%;
             box-sizing: border-box;
             padding: 34px 82.5px;
+            .icon-icon-menu{
+                font-size: 27px;
+                color: map-get($colors, primary);
+                @media #{$phone} {
+                    display: none !important;
+                }
+
+                &.collap{
+                    display: none;
+                    cursor: pointer;
+                    @media #{$tablet} {
+                        display: block;
+                        position: relative;
+                        left: 0;
+                    }
+                }
+            }
             @media #{$phone} {
                 padding: 14px 0;
             }
@@ -78,6 +96,9 @@
                     line-height: 27px;
                     font-family: "AvenirNextLTProRegular",sans-serif;
                     border: none;
+                    @media #{$tablet_large} {
+                        width: 40%;
+                    }
                     &:focus{
                         outline: none;
                     }

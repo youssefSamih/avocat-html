@@ -157,3 +157,32 @@
     margin-left: 0;
   }
 }
+
+.header  {
+display: none;
+  @media #{$phone} {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+
+    &__social{
+      display: flex;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      justify-content: center;
+
+      &__ic{
+        &, a{
+            margin-right: 16px;
+            font-size: 27px;
+            color: map-get($colors, primary);
+            &:first-child{
+              margin-right: 50%;
+            }
+          }
+        }
+      }
+    }
+}

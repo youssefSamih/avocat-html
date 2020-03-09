@@ -32,14 +32,19 @@ AV.lameSkeleton = {
 			$("main").toggleClass("mainActive");
 			$(".nav-item__link__title").toggleClass("collapsed");
 			$(".nav-item__link__ic").toggleClass("collapsed");
-		  });
-		  new fullScroll({
-			sections : 'section',
-			mainElement: 'main',
-			displayDots: true,
-			dotsPosition: 'right',
-			animateTime: 1,
-			animateFunction: 'ease'
-		  });
+			});
+			function checkPosition() {
+					if (window.matchMedia('(min-width: 768px)').matches) {
+						new fullScroll({
+							sections : 'section',
+							mainElement: 'main',
+							displayDots: true,
+							dotsPosition: 'right',
+							animateTime: 1,
+							animateFunction: 'ease'
+						});
+					}
+			}
+			checkPosition();
 	}
 };

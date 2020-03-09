@@ -18,8 +18,8 @@
         height: 100%;
         position: relative;
         @media #{$phone} {
-            overflow-y: auto;
-            overflow-x: hidden;
+            // overflow-y: auto;
+            // overflow-x: hidden;
             padding-bottom: 100px;
         }
         &__social{
@@ -32,10 +32,11 @@
                 padding: 34px 100px 0 0;
             }
             @media #{$phone} {
-                padding: 34px 5px 0 0;
+                // padding: 34px 5px 0 0;
+                display: none;
             }
             &__ic{
-                a{
+                &, a{
                     margin-right: 16px;
                     font-size: 27px;
                     color: map-get($colors, primary);

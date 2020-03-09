@@ -1,1 +1,6 @@
 
+.mainActive{
+  @media #{$phone} {
+    overflow-y: auto;
+  }
+}
