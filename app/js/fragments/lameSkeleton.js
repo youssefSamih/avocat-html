@@ -11,6 +11,7 @@ AV.lameSkeleton = {
 				$("a[href='"+ url +"']").toggleClass("active");
 		  });
 		  $(".collap").click(function(){
+				$(".collap a").attr("href", url);
 				$(".sidebar").toggleClass("active");
 				$("main").toggleClass("mainActive");
 				$(".nav-item__link__title").toggleClass("collapsed");
@@ -35,6 +36,8 @@ AV.lameSkeleton = {
 					});
 				} else {
 					$('.nav-item__link').click(function() {
+						$(".nav-item__link").removeClass("active");
+						$("a[href='"+ url +"']").toggleClass("active");
 						$(".sidebar").addClass("active");
 					});
 				}
