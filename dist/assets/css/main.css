@@ -1538,6 +1538,9 @@ select,
           .lame-contact__section__form .form__submit:focus {
             outline: none; }
 
+#map {
+  padding: 0; }
+
 
 @font-face {
   font-family: 'Great Vibes';

@@ -3,7 +3,8 @@
   "ready": true,
   "fragments": {
     "lameHome": true,
-    "lameSkeleton": true
+    "lameSkeleton": true,
+    "lameContact": true
   },
   "namespace": "AV"
 }

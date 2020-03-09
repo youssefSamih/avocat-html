@@ -3,9 +3,24 @@
 var AV = AV || {};
 
 $(document).ready(function () {
+
 	AV.lameHome.init();
 	AV.lameSkeleton.init();
+	AV.lameContact.init();
+
 });
+
+AV.lameContact = {
+	init: function () {
+		mapboxgl.accessToken = 'pk.eyJ1IjoieW91c3NlZnNhbWloIiwiYSI6ImNrMnJucjducTA4aXAzaHB2bmF5cjhsZnAifQ.0mJnZzE7_w0J9SXQoUKecw';
+		var map = new mapboxgl.Map({
+		container: 'map', 
+		style: 'mapbox://styles/mapbox/streets-v11', 
+		center: [-74.5, 40], 
+		zoom: 9 
+		});
+	}
+};
 
 AV.lameHome = {
 	init: function () {
