@@ -35,6 +35,7 @@ AV.lameSkeleton = {
 			});
 			function checkPosition() {
 					if (window.matchMedia('(min-width: 768px)').matches) {
+						$("section").removeAttr("id");
 						new fullScroll({
 							sections : 'section',
 							mainElement: 'main',

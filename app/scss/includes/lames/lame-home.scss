@@ -18,9 +18,8 @@
         height: 100%;
         position: relative;
         @media #{$phone} {
-            // overflow-y: auto;
-            // overflow-x: hidden;
             padding-bottom: 100px;
+            margin-top: 20px;
         }
         &__social{
             list-style: none;
@@ -81,6 +80,10 @@
             margin-bottom: 34.25px;
             color: map-get($colors, primary);
             font-family: 'AvenirNextLTProRegular';
+            @media #{$minHeightDescktop} {
+                font-size: 60px;
+                margin: 0;
+            }
             @media #{$tablet_large} {
                 padding: 0 100px;
             }
@@ -89,10 +92,14 @@
                 font-size: 30px;
                 height: auto;
                 width: 100%;
+                margin: 0;
             }
         }
         &__details{
             padding: 40px 0 0 208px;
+            @media #{$minHeightDescktop} {
+                padding: 0 8%;
+            }
             @media #{$tablet_large} {
                 padding: 40px 0 0 10px;
             }
@@ -172,6 +179,9 @@
                         @media #{$phone} {
                             display: flex;
                             flex-direction: column;
+                            width: 60vw;
+                            text-align: center;
+                            margin-top: 5px;
                         }
                         a{
                             padding: 11px 29px;
@@ -211,6 +221,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            @media #{$minHeightDescktop} {
+                padding: 70px 674px;
+            }
             @media #{$tablet_large} {
                 padding: 100px;
             }

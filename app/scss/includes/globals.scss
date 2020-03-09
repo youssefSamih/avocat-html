@@ -131,3 +131,14 @@ a {
   animation-duration: 3s;
   animation-delay: 1s;
 }
+.scroll-container section{
+  @media #{$phone}{
+    height: 140vh;
+  }
+  @media #{$tablet}{
+    height: 100%;
+  }
+  // @media #{$desktop}{
+  //   height: 100%;
+  // }
+}

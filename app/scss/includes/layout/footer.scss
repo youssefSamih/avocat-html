@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 50px;
     background: linear-gradient(180deg, map-get($colors, gradient1) 0%, map-get($colors, gradient2) 100%);
@@ -10,7 +10,7 @@
     display: flex;
     cursor: pointer;
     transition: width .3s ease-in-out;
-    z-index: 12;
+    z-index: 120;
     @media #{$tablet} {
         height: 70px;
         bottom: 0;
@@ -38,8 +38,16 @@
             font-size: 30px;
             color: map-get($colors, white);
             margin-right: 10px;
+            @media #{$phone} {
+                font-size: 115%;
+                margin-right: 5px;
+                &.icon-icon-clock{
+                    font-size: 35px;
+                    margin-right: 10px;
+                }
+            }
             @media #{$tablet} {
-                font-size: 30px;
+                font-size: 200%;
                 margin-right: 5px;
                 &.icon-icon-clock{
                     font-size: 35px;
@@ -64,8 +72,11 @@
             }
             p{
                 font-size: 18px;
+                @media #{$phone} {
+                    font-size: 25%;
+                }
                 @media #{$tablet} {
-                    font-size: 15px;
+                    font-size: 35%;
                     &.footer{
                         &__responsive{
                             font-size: 20px;
@@ -91,6 +102,18 @@
                         margin-right: 20px;
                     }
                 }
+                @media #{$phone} {
+                    margin-right: 5%;
+                    &:first-child{
+                        h2{
+                            margin-right: -5px;
+                        }
+                    }
+                }
+                @media #{$tablet} {
+                    flex: 1;
+                    margin-right: 18%;
+                }
             }
 
             &.itemWithToggle{
@@ -100,9 +123,6 @@
 
             @media #{$tablet} {
                 flex-direction: row;
-                &.toggle{
-                    flex: .3;
-                }
             }
 
             &.toggle{
@@ -114,6 +134,15 @@
                     @media #{$tablet} {
                         display: none;
                     }
+                }
+                @media #{$phone} {
+                    margin-right: 30px;
+                    margin-left: 10px;
+                }
+                @media #{$tablet} {
+                    flex: .5;
+                    justify-content: center;
+                    margin-right: 35%;
                 }
             }
         }
