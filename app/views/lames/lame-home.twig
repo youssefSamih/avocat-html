@@ -5,7 +5,7 @@
           <ul class="lame-home__section__social">
             <li class="lame-home__section__social__ic collap"><i class="icon-icon-{{ item.leftPosition }}"></i></li>
             {% for item in item.icon %}
-              <li class="lame-home__section__social__ic"><i class="icon-icon-{{ item.icon }}"></i></li>
+              <li class="lame-home__section__social__ic"><a href="#"><i class="icon-icon-{{ item.icon }}"></i></a></li>
             {% endfor %}
           </ul>
         {% endif %}
@@ -38,8 +38,10 @@
                   {% endif %}
                   {% if child.hasIcon %}
                     <div class="lame-home__section__details__more">
-                      <p>La suite</p>
-                      <i class="icon-icon-arrow"></i>
+                      <a href="#">
+                        <p>La suite</p>
+                        <i class="icon-icon-arrow"></i>
+                      </a>
                     </div>
                   {% endif %}
                 </div>

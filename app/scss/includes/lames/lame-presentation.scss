@@ -37,9 +37,11 @@
             }
 
             &__ic{
-                margin-right: 16px;
-                font-size: 27px;
-                color: map-get($colors, primary);
+                a{
+                    margin-right: 16px;
+                    font-size: 27px;
+                    color: map-get($colors, primary);
+                }
 
                 &.collap{
                     display: none;

@@ -13,7 +13,7 @@
   }
   &,+.floating-label {
     position: relative;
-    transition: transform 0.25s, opacity 0.25s ease-in-out;
+    transition: transform .25s ease, opacity 0.25s ease-in-out;
     transform-origin: 0 0;
     opacity: 0.7;
     color: #C6C6C6;
@@ -27,15 +27,14 @@
     }
   }
   &:focus,
-    &:not(:placeholder-shown) {
-        border-color: rgba(#979797, 0.8);
-        &+.floating-label {
-            transform: translate(1%, -300%) scale(0.8);
-            @media (min-width: 1712px) {
-              transform: translate(-100%, -90%) scale(0.8);
-            }
-            // opacity: .25;
+  &:not(:placeholder-shown) {
+      border-color: rgba(#979797, 0.8);
+      &+.floating-label {
+        transform: translate(1%, -340%) scale(0.8);
+        @media (min-width: 1712px) {
+          transform: translate(-100%, -90%) scale(0.8);
         }
+      }
     }
     &:valid {
       &:not(:placeholder-shown) {
@@ -56,7 +55,7 @@ label.floating-label {
 
 .float-label {
     position: relative;
-    transition: transform 0.25s, opacity 0.25s ease-in-out;
+    // transition: transform 0.25s, opacity 0.25s ease-in-out !important;
     opacity: 0.7;
     color: #C6C6C6 !important;
     font-family: "AvenirNextLTProRegular";

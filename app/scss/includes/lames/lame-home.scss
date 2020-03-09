@@ -35,9 +35,11 @@
                 padding: 34px 5px 0 0;
             }
             &__ic{
-                margin-right: 16px;
-                font-size: 27px;
-                color: map-get($colors, primary);
+                a{
+                    margin-right: 16px;
+                    font-size: 27px;
+                    color: map-get($colors, primary);
+                }
 
                 &.collap{
                     display: none;
@@ -116,6 +118,7 @@
                     display: flex;
                     &:after{
                         content: '';
+                        @extend .animated;
                         border: .5px solid #f8094b;
                         height: 258px;
                         position: absolute;
