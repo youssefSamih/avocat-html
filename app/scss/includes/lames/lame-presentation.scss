@@ -18,6 +18,9 @@
         width: 100%;
         height: 100%;
         position: relative;
+        @media #{$tablet} {
+            padding-top: 50px;
+        }
         @media #{$phone} {
             // overflow-y: auto;
             // overflow-x: hidden;
@@ -83,12 +86,12 @@
             font-family: 'CenturyGothicRegular';
             font-size: 80px;
             line-height: 98px;
-            @media #{$minHeightDescktop} {
-                font-size: 60px;
-                margin: 0;
-            }
-            @media #{$tablet_large} {
-                padding: 0 100px;
+            @media (max-width: 768px){
+                font-size: 80px;
+                margin-top: 34.25px;
+                margin-bottom: 34.25px;
+                line-height: 98px;
+                padding: 0 !important;
             }
             @media #{$phone} {
                 padding: 0 15px;
@@ -97,6 +100,13 @@
                 width: 100%;
                 line-height: 30px;
                 margin: 5px;
+            }
+            @media #{$tablet_large} {
+                padding: 0 100px;
+            }
+            @media #{$minHeightDescktop} {
+                font-size: 60px;
+                margin: 0;
             }
         }
         &__details{
@@ -108,7 +118,10 @@
             p{
                 font-size: 22px;
                 @media #{$tablet} {
-                    font-size: 13px;
+                    font-size: 20px;
+                }
+                @media #{$phone} {
+                    font-size: 12px;
                 }
             }
         }
