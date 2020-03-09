@@ -512,7 +512,8 @@ a {
           font-size: 27px;
           color: #f8094b; }
           .header__social__ic:first-child, .header__social__ic a:first-child {
-            margin-right: 35%; } }
+            margin-right: 35%;
+            cursor: pointer; } }
 
 .footer {
   position: fixed;

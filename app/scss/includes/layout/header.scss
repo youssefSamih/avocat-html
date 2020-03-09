@@ -182,6 +182,7 @@ display: none;
             color: map-get($colors, primary);
             &:first-child{
               margin-right: 35%;
+              cursor: pointer;
             }
           }
         }
