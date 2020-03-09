@@ -77,6 +77,7 @@
             }
             @media #{$phone} {
                 padding: 0 30px;
+                height: 30px;
             }
         }
         &__content{
@@ -102,9 +103,19 @@
                     margin-top: 40.1px;
                     animation-duration: 3s;
                     animation-delay: 1s;
+                    @media #{$minHeightDescktop} {
+                        font-size: 20px;
+                        margin: 0;
+                        height: 50px;
+                        margin-top: 8%;
+                    }
                     @media #{$tablet_large} {
                         margin-top: 80.1px;
                         margin-bottom: 80.1px;
+                    }
+                    @media #{$phone} {
+                        margin-top: 10%;
+                        margin-bottom: 0;
                     }
                 }
                 &__items{

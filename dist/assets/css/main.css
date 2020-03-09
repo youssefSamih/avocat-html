@@ -1229,6 +1229,10 @@ select,
       font-family: 'CenturyGothicRegular';
       font-size: 80px;
       line-height: 98px; }
+      @media screen and (max-height: 800px) and (min-width: 1024px) {
+        .lame-presentation__section__title {
+          font-size: 60px;
+          margin: 0; } }
       @media screen and (max-width: 1024px) {
         .lame-presentation__section__title {
           padding: 0 100px; } }
@@ -1346,7 +1350,8 @@ select,
           padding: 0 100px; } }
       @media screen and (max-width: 768px) {
         .lame-expertises__section__subTitle {
-          padding: 0 30px; } }
+          padding: 0 30px;
+          height: 30px; } }
     .lame-expertises__section__content {
       padding: 0 99px; }
       @media screen and (max-width: 992px) {
@@ -1382,10 +1387,20 @@ select,
           animation-duration: 3s;
           -webkit-animation-delay: 1s;
           animation-delay: 1s; }
+          @media screen and (max-height: 800px) and (min-width: 1024px) {
+            .lame-expertises__section__content .cols__title {
+              font-size: 20px;
+              margin: 0;
+              height: 50px;
+              margin-top: 8%; } }
           @media screen and (max-width: 1024px) {
             .lame-expertises__section__content .cols__title {
               margin-top: 80.1px;
               margin-bottom: 80.1px; } }
+          @media screen and (max-width: 768px) {
+            .lame-expertises__section__content .cols__title {
+              margin-top: 10%;
+              margin-bottom: 0; } }
         .lame-expertises__section__content .cols__items {
           padding: 0;
           width: 100%;
@@ -1440,6 +1455,10 @@ select,
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 34px 82.5px; }
+      @media screen and (max-height: 800px) and (min-width: 1024px) {
+        .lame-contact__section__form {
+          overflow-y: auto;
+          height: 80%; } }
       .lame-contact__section__form .icon-icon-menu {
         font-size: 27px;
         color: #f8094b; }

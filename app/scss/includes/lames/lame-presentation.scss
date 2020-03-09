@@ -83,6 +83,10 @@
             font-family: 'CenturyGothicRegular';
             font-size: 80px;
             line-height: 98px;
+            @media #{$minHeightDescktop} {
+                font-size: 60px;
+                margin: 0;
+            }
             @media #{$tablet_large} {
                 padding: 0 100px;
             }
