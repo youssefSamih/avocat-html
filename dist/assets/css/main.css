@@ -299,10 +299,6 @@ a {
   .mainActive {
     overflow-y: hidden; } }
 
-@media (max-width: 415px) {
-  .mainActive {
-    overflow-y: auto; } }
-
 .sidebar {
   height: 100vh;
   position: fixed;
@@ -315,7 +311,8 @@ a {
       -webkit-transition: -webkit-transform .3s ease-in-out;
       transition: -webkit-transform .3s ease-in-out;
       transition: transform .3s ease-in-out;
-      transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out; }
+      transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+      z-index: 11; }
       .sidebar:after {
         content: "";
         position: absolute;
@@ -498,7 +495,8 @@ a {
       display: flex;
       position: fixed;
       z-index: 10;
-      width: 100%; }
+      width: 100%;
+      padding: 9px; }
       .header__social {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -514,7 +512,7 @@ a {
           font-size: 27px;
           color: #f8094b; }
           .header__social__ic:first-child, .header__social__ic a:first-child {
-            margin-right: 50%; } }
+            margin-right: 35%; } }
 
 .footer {
   position: fixed;
@@ -536,6 +534,11 @@ a {
   -webkit-transition: width .3s ease-in-out;
   transition: width .3s ease-in-out;
   z-index: 120; }
+  @media (max-width: 415px) {
+    .footer {
+      width: 100%;
+      -webkit-clip-path: none;
+      clip-path: none; } }
   @media screen and (max-width: 992px) {
     .footer {
       height: 70px;
@@ -558,6 +561,18 @@ a {
     -webkit-transition: opacity 3s ease-in-out;
     transition: opacity 3s ease-in-out;
     opacity: 0; }
+    @media (max-width: 415px) {
+      .footer__el:first-child {
+        display: none !important;
+        margin: 0; }
+      .footer__el:nth-child(2) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        opacity: 1;
+        width: 100%;
+        -ms-flex-pack: distribute;
+        justify-content: space-around; } }
     .footer__el.active {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -570,17 +585,17 @@ a {
       font-size: 30px;
       color: #fff;
       margin-right: 10px; }
-      @media screen and (max-width: 768px) {
-        .footer__el__ic {
-          font-size: 115%;
-          margin-right: 5px; }
-          .footer__el__ic.icon-icon-clock {
-            font-size: 35px;
-            margin-right: 10px; } }
       @media screen and (max-width: 992px) {
         .footer__el__ic {
           font-size: 200%;
           margin-right: 5px; }
+          .footer__el__ic.icon-icon-clock {
+            font-size: 35px;
+            margin-right: 10px; } }
+      @media screen and (max-width: 768px) {
+        .footer__el__ic {
+          font-size: 180%;
+          margin-right: 0; }
           .footer__el__ic.icon-icon-clock {
             font-size: 35px;
             margin-right: 10px; } }
@@ -604,14 +619,14 @@ a {
         color: #fff; }
       .footer__el__title p {
         font-size: 18px; }
-        @media screen and (max-width: 768px) {
-          .footer__el__title p {
-            font-size: 25%; } }
         @media screen and (max-width: 992px) {
           .footer__el__title p {
             font-size: 35%; }
             .footer__el__title p.footer__responsive {
               font-size: 20px; } }
+        @media screen and (max-width: 768px) {
+          .footer__el__title p {
+            font-size: 25%; } }
       .footer__el__title span {
         font-size: 24px;
         margin-bottom: 3px;
@@ -629,19 +644,30 @@ a {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
+      .footer__el__item:last-child {
+        width: 100%; }
       .footer__el__item .itemNotoggle:first-child h2 {
         margin-right: 20px; }
-      @media screen and (max-width: 768px) {
-        .footer__el__item .itemNotoggle {
-          margin-right: 5%; }
-          .footer__el__item .itemNotoggle:first-child h2 {
-            margin-right: -5px; } }
       @media screen and (max-width: 992px) {
         .footer__el__item .itemNotoggle {
           -webkit-box-flex: 1;
           -ms-flex: 1;
           flex: 1;
           margin-right: 18%; } }
+      @media screen and (max-width: 768px) {
+        .footer__el__item .itemNotoggle {
+          margin-right: 25%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column; }
+          .footer__el__item .itemNotoggle:last-child {
+            margin-right: 0; }
+          .footer__el__item .itemNotoggle:first-child h2 {
+            margin-right: -5px; } }
       .footer__el__item.itemWithToggle {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 20%;
@@ -649,6 +675,9 @@ a {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; }
+        @media screen and (max-width: 768px) {
+          .footer__el__item.itemWithToggle {
+            display: none; } }
       @media screen and (max-width: 992px) {
         .footer__el__item {
           -webkit-box-orient: horizontal;
@@ -921,6 +950,9 @@ select,
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
+  @media (max-width: 415px) {
+    .lame-home {
+      overflow-y: auto; } }
   .lame-home:before {
     content: "";
     position: absolute;
@@ -929,6 +961,9 @@ select,
     height: 100%;
     width: 100%;
     pointer-events: none; }
+    @media (max-width: 415px) {
+      .lame-home:before {
+        height: 150vh; } }
   .lame-home__section {
     width: 100%;
     height: 100%;
@@ -1159,6 +1194,9 @@ select,
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
+  @media (max-width: 415px) {
+    .lame-presentation {
+      overflow-y: auto; } }
   .lame-presentation:before {
     content: "";
     position: absolute;
@@ -1168,6 +1206,9 @@ select,
     width: 100%;
     opacity: 0.88;
     pointer-events: none; }
+    @media (max-width: 415px) {
+      .lame-presentation:before {
+        height: 150vh; } }
   .lame-presentation__section {
     width: 100%;
     height: 100%;

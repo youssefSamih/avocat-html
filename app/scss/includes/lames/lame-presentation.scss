@@ -4,6 +4,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @media (max-width: 415px) {
+        overflow-y: auto;
+    }
     &:before {
         content: "";
         position: absolute;
@@ -13,6 +16,9 @@
         width: 100%;
         opacity: 0.88;
         pointer-events: none;
+        @media (max-width: 415px) {
+            height: 150vh;
+        }
     }
     &__section{
         width: 100%;

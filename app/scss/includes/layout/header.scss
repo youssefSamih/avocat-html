@@ -6,6 +6,7 @@
   z-index: 10;
   @media #{$phone} {
     transition: transform .3s ease-in-out;
+    z-index: 11;
     &:after{
       content: "";
       position: absolute;
@@ -165,6 +166,7 @@ display: none;
     position: fixed;
     z-index: 10;
     width: 100%;
+    padding: 9px;
 
     &__social{
       display: flex;
@@ -179,7 +181,7 @@ display: none;
             font-size: 27px;
             color: map-get($colors, primary);
             &:first-child{
-              margin-right: 50%;
+              margin-right: 35%;
             }
           }
         }
