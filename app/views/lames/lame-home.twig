@@ -10,13 +10,13 @@
           </ul>
         {% endif %}
         {% if item.hasSubtitle %}
-          <h2 class="lame-home__section__subTitle animated fadeIn">maitre</h2>
+          <h2 class="lame-home__section__subTitle">maitre</h2>
         {% endif %}
         {% if item.hasTitle %}
-          <h1 class="lame-home__section__title animated fadeIn animate-typing" data-type-speed="100" data-type-delay="3000" data-remove-speed="60" data-remove-delay="600">Sabrina BOUGOUFA</h1>
+          <h1 class="lame-home__section__title animate-typing" data-type-speed="100" data-type-delay="3000" data-remove-speed="60" data-remove-delay="600">Sabrina BOUGOUFA</h1>
         {% endif %}
         {% if item.hasChild %}
-          <div class="lame-home__section__details animated fadeIn">
+          <div class="lame-home__section__details">
             <div class="row">
               {% for child in item.child %}
                 <div class="{{ child.classDiv }}">

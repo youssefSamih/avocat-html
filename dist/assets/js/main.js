@@ -8,6 +8,7 @@ $(document).ready(function () {
 	AV.lameSkeleton.init();
 	AV.lameContact.init();
 	AV.lamePresentation.init();
+	AV.lameExpertise.init();
 
 });
 
@@ -25,14 +26,24 @@ AV.lameContact = {
 };
 
 "use strict"
-AV.lameHome = {
+AV.lameExpertise = {
 	init: function () {
-		var listSubUrl = window.location.href.split("/");
 		$(window).on("hashchange", function() {
-			if(listSubUrl[listSubUrl.length - 1] === "#0"){
-				$(".lame-home__section__subTitle, .lame-home__section__title, .lame-home__section__details").addClass("animated fadeIn");
+			if($("a[href='#2']").hasClass("active")){
+				$(".cols").addClass("animated fadeIn");
 			}
 		});
+	}
+};
+
+"use strict"
+AV.lameHome = {
+	init: function () {
+		$(window).on("hashchange", function() {
+			if($("a[href='#0']").hasClass("active")){
+				$(".lame-home__section__subTitle, .lame-home__section__title, .lame-home__section__details, .lame-presentation__section__signature").addClass("animated fadeIn");
+			}
+		})
 		setInterval(function(){
 			$('#mouseMouve').toggleClass("mouseMouve");
 		}, 900);
@@ -42,15 +53,11 @@ AV.lameHome = {
 "use strict"
 AV.lamePresentation = {
 	init: function () {
-		var listSubUrl = window.location.href.split("/");
 		$(window).on("hashchange", function() {
-			$(".lame-presentation__section__subTitle, .lame-presentation__section__title, .lame-presentation__section__details, .lame-presentation__section__signature").removeClass("animated fadeIn");
-			setTimeout(function(){
-				if(listSubUrl[listSubUrl.length - 1] === "#1"){
-					$(".lame-presentation__section__subTitle, .lame-presentation__section__title, .lame-presentation__section__details, .lame-presentation__section__signature").addClass("animated fadeIn");
-				}
-			}, 600);
-		});
+			if($("a[href='#1']").hasClass("active")){
+				$(".lame-presentation__section__subTitle, .lame-presentation__section__title, .lame-presentation__section__details, .lame-presentation__section__signature").addClass("animated fadeIn");
+			}
+		})
 	}
 };
 

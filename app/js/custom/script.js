@@ -8,5 +8,6 @@ $(document).ready(function () {
 	AV.lameSkeleton.init();
 	AV.lameContact.init();
 	AV.lamePresentation.init();
+	AV.lameExpertise.init();
 
 });
