@@ -45,6 +45,11 @@ AV.lameSkeleton = {
 				}, .3);
 			}
 		}
+		function toggleClasses() {
+			$(".nav-item__link").removeClass("active");
+			$("a[href='" + url + "']").toggleClass("active");
+			$(".sidebar").toggleClass("active");
+		}
     $(window).on("hashchange", function() {
 			listSubUrl = window.location.href.split("/");
       if (listSubUrl[listSubUrl.length - 1].startsWith("#")) {
@@ -61,13 +66,21 @@ AV.lameSkeleton = {
 				url = listSubUrl[listSubUrl.length - 1];
 				scrollToSection(url);
       }
-      $(".nav-item__link").removeClass("active");
-      $("a[href='" + url + "']").toggleClass("active");
-      $(".sidebar").toggleClass("active");
+      toggleClasses();
       $("main").toggleClass("mainActive");
       $(".nav-item__link__title").toggleClass("collapsed");
       $(".nav-item__link__ic").toggleClass("collapsed");
-    });
+		});
+		$(".toggle").click(function() {
+			$(".footer").toggleClass("stretch");
+			$(".footer__el").toggleClass("active");
+		});
+		$('#collapMenu, .collap').click(function(){
+			var href = $("a.active").attr("href");
+			$('html, body').animate({
+				scrollTop: $(""+href).offset().top
+			}, .3);
+		});
     if (window.matchMedia("(min-width: 768px)").matches) {
       $("section").removeAttr("id");
       new fullScroll({
@@ -78,11 +91,6 @@ AV.lameSkeleton = {
         animateTime: 1,
         animateFunction: "ease"
 			});
-			$(".toggle").click(function() {
-        $(this).preventDefault();
-        $(".footer").toggleClass("stretch");
-        $(".footer__el").toggleClass("active");
-      });
 		}
 		if (window.matchMedia("(max-width: 768px)").matches) {
       $(".link").click(function() {
@@ -90,10 +98,8 @@ AV.lameSkeleton = {
         if (listSubUrl[listSubUrl.length - 1].startsWith("#")) {
 					url = listSubUrl[listSubUrl.length - 1];
 				}
-        $(".nav-item__link").removeClass("active");
-        $(".nav-item__link").toggleClass("active");
+				toggleClasses();
         $("a[href='" + url + "']").toggleClass("active");
-        $(".sidebar").toggleClass("active");
       });
     }
   }

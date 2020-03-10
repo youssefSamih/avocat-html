@@ -7,7 +7,7 @@
           <p class="logo__link__subTitle">Avocat</p>
         </a>
       </li>
-      <li class="nav-item"><a class="nav-item__link collap"><i class="nav-item__link__ic icon-icon-menu"></i></a></li>
+      <li class="nav-item"><a class="nav-item__link collap" id="collapMenu"><i class="nav-item__link__ic icon-icon-menu"></i></a></li>
       {% for item in items %}
         <li class="{{ classLi }}"><a href="{{ item.link }}" class="link {{ classA }} {{ item.classActive }}"><i class="{{ classIcon }} {{ item.classIcon }}"></i><p class="{{ classTitle }}">{{item.content}}</p></a></li>
       {% endfor %}
@@ -16,8 +16,9 @@
 </header>
 <div class="header">
   <ul class="header__social">
+      <li class="header__social__ic"><a class="collap"><i class="icon-icon-menu"></i></a></li>
     {% for item in icon %}
-      <li class="header__social__ic"><a class="collap"><i class="icon-icon-{{ item.icon }}"></i></a></li>
+      <li class="header__social__ic"><a><i class="icon-icon-{{ item.icon }}"></i></a></li>
     {% endfor %}
   </ul>
 </div>
