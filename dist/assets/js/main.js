@@ -77,9 +77,11 @@ AV.lameSkeleton = {
 		});
 		$('#collapMenu, .collap').click(function(){
 			var href = $("a.active").attr("href");
-			$('html, body').animate({
-				scrollTop: $(""+href).offset().top
-			}, .3);
+			if (window.matchMedia("(max-width: 768px)").matches){
+				$('html, body').animate({
+					scrollTop: $(""+href).offset().top
+				}, .3);
+			}
 		});
     if (window.matchMedia("(min-width: 768px)").matches) {
       $("section").removeAttr("id");
