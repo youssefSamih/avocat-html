@@ -1,6 +1,7 @@
 /*
  * lameHome Functions
  * */
+"use strict"
 AV.lameHome = {
 	init: function () {
 		setInterval(function(){

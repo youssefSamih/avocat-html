@@ -178,7 +178,7 @@ gulp.task('jshint', function () {
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish', {beep: true}))
     .pipe(plugins.concat('main.js'))
-    .pipe(plugins.stripDebug()) // Removing logs from js files
+    // .pipe(plugins.stripDebug()) // Removing logs from js files
     .pipe(plugins.stripComments()) // Removing comments from JS files
     .pipe(gulp.dest(js.dest))
     .pipe(plugins.uglify())

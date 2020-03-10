@@ -1,6 +1,7 @@
 /*
  * lameContact Functions
  * */
+"use strict"
 AV.lameContact = {
 	init: function () {
 		mapboxgl.accessToken = 'pk.eyJ1IjoieW91c3NlZnNhbWloIiwiYSI6ImNrMnJucjducTA4aXAzaHB2bmF5cjhsZnAifQ.0mJnZzE7_w0J9SXQoUKecw';
