@@ -90,6 +90,15 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                &.expert1{
+                    animation-delay: 0.5s;
+                }
+                &.expert2{
+                    animation-delay: 0.75s;
+                }
+                &.expert3{
+                    animation-delay: 1s;
+                }
                 &__ic {
                     color: map-get($colors, white);
                     font-size: 80px;

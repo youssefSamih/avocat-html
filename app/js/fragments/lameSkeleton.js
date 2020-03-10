@@ -8,10 +8,12 @@ AV.lameSkeleton = {
 		var url = "#0";
 		var listSubUrl = window.location.href.split("/");
 		function scrollToSection(id) {
-			if(url !== id) {
-				$('html, body').animate({
-					scrollTop: $(""+url).offset().top
-				}, .3);
+			if (window.matchMedia("(max-width: 768px)").matches) {
+				if(url !== id) {
+					$('html, body').animate({
+						scrollTop: $(""+url).offset().top
+					}, .3);
+				}
 			}
 		}
 		function toggleClasses() {

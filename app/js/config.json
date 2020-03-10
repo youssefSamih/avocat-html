@@ -4,7 +4,8 @@
   "fragments": {
     "lameHome": true,
     "lameSkeleton": true,
-    "lameContact": true
+    "lameContact": true,
+    "lamePresentation": true
   },
   "namespace": "AV"
 }

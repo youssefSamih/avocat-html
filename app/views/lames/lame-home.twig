@@ -10,23 +10,23 @@
           </ul>
         {% endif %}
         {% if item.hasSubtitle %}
-          <h2 class="lame-home__section__subTitle animated zoomIn">maitre</h2>
+          <h2 class="lame-home__section__subTitle animated fadeIn">maitre</h2>
         {% endif %}
         {% if item.hasTitle %}
-          <h1 class="lame-home__section__title animated zoomIn">Sabrina BOUGOUFA</h1>
+          <h1 class="lame-home__section__title animated fadeIn animate-typing" data-type-speed="100" data-type-delay="3000" data-remove-speed="60" data-remove-delay="600">Sabrina BOUGOUFA</h1>
         {% endif %}
         {% if item.hasChild %}
-          <div class="lame-home__section__details">
+          <div class="lame-home__section__details animated fadeIn">
             <div class="row">
               {% for child in item.child %}
                 <div class="{{ child.classDiv }}">
                   {% if child.hasImg %}
-                    <div class="lame-home__section__details__img animated zoomIn">
+                    <div class="lame-home__section__details__img">
                       <img src="assets/imgs/userImg/profile.jpg" alt="Sabrina BOUGOUFA">
                     </div>
                   {% endif %}
                   {% if child.hasDescription %}
-                    <div class="lame-home__section__details__description animated zoomIn">
+                    <div class="lame-home__section__details__description">
                       <p>
                         Avocat à Creil, Maître Sabrina BOUGOUFA intervient tant en matière de conseil que de contentieux, principalement en Droit pénal et Droit de la famille, des personnes et de leur patrimoine
                       </p>

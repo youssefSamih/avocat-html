@@ -10,19 +10,19 @@
         </ul>
       {% endif %}
       {% if item.hasSubtitle %}
-        <h2 class="lame-expertises__section__subTitle animated zoomIn">Expertises</h2>
+        <h2 class="lame-expertises__section__subTitle">Expertises</h2>
       {% endif %}
       {% if item.hasColumn %}
         <div class="lame-expertises__section__content">
           <div class="row">
             {% for col in item.columns %}
               <div class="col-md-4 col-xs-12">
-                <div class="cols">
+                <div class="cols animated fadeIn {{ col.class }}">
                   <i class="cols__ic icon-icon-{{ col.icon }}"></i>
-                  <h2 class="cols__title animated zoomIn">{{ col.contentH2 }}</h2>
-                  <ul class="cols__items animated zoomIn">
+                  <h2 class="cols__title">{{ col.contentH2 }}</h2>
+                  <ul class="cols__items">
                     {% for item in col.item %}
-                      <li class="cols__item animated zoomIn">{{ item.content }}</li>
+                      <li class="cols__item">{{ item.content }}</li>
                     {% endfor %}
                   </ul>
                 </div>

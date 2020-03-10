@@ -104,10 +104,12 @@
               position: absolute;
               pointer-events: none;
               @media #{$phone} {
+                animation: none;
                 position: unset;
                 pointer-events: unset;
                 opacity: 1;
                 transform: translateY(0);
+                margin-top: 0;
               }
             }
           }
