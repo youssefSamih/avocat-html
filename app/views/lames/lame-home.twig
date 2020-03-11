@@ -50,11 +50,13 @@
           </div>
         {% endif %}
         {% if item.hasJustIcon %}
-          <div class="lame-home__section__icon">
-            {% for icon in item.icon %}
-            <i class="icon-icon-{{ icon.ic }}" id="{{ icon.id }}"></i>
-            {% endfor %}
-          </div>
+          <a href="#1">
+            <div class="lame-home__section__icon">
+                {% for icon in item.icon %}
+                <i class="icon-icon-{{ icon.ic }}" id="{{ icon.id }}"></i>
+                {% endfor %}
+            </div>
+          </a>
         {% endif %}
     {% endfor %}
   </div>
