@@ -22,6 +22,12 @@ AV.lameContact = {
 		center: [-74.5, 40], 
 		zoom: 9 
 		});
+		var mapbox = new mapboxgl.Map({
+			container: 'mapbox', 
+			style: 'mapbox://styles/mapbox/streets-v11', 
+			center: [-74.5, 40], 
+			zoom: 9 
+		});
 	}
 };
 

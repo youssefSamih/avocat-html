@@ -1129,7 +1129,8 @@ select,
           padding: 40px 0 0 10px; } }
       @media screen and (max-width: 768px) {
         .lame-home__section__details {
-          padding: 0 10px; } }
+          padding: 0 10px;
+          margin: 0; } }
       .lame-home__section__details__img {
         height: 187px;
         width: 190px;
@@ -1499,7 +1500,7 @@ select,
       @media screen and (max-width: 768px) {
         .lame-expertises__section__subTitle {
           padding: 0 30px;
-          height: 30px;
+          height: 50px;
           padding-top: 15px; } }
     .lame-expertises__section__content {
       padding: 0 99px; }
@@ -1613,7 +1614,7 @@ select,
         background-color: #1D1B26; }
         @media screen and (max-width: 768px) {
           .lame-contact__section .row .col-lg-7 {
-            height: 50%;
+            height: 100%;
             width: 100%;
             overflow-y: auto;
             overflow-x: hidden;
@@ -1650,6 +1651,14 @@ select,
       .lame-contact__section__form .form {
         overflow-y: auto;
         overflow-x: hidden; }
+        .lame-contact__section__form .form__map {
+          display: none;
+          height: 70%;
+          margin-top: 20px;
+          margin-bottom: 72px; }
+          @media screen and (max-width: 768px) {
+            .lame-contact__section__form .form__map {
+              display: block; } }
         .lame-contact__section__form .form__title {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -1716,6 +1725,9 @@ select,
     #map {
       width: 100%;
       height: 50%; } }
+  @media screen and (max-width: 768px) {
+    #map {
+      display: none; } }
 
 
 @font-face {
