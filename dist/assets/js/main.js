@@ -81,6 +81,17 @@ AV.lameSkeleton = {
 			$("a[href='" + url + "']").toggleClass("active");
 			$(".sidebar").toggleClass("active");
 		}
+		function truncateText(selector, maxLength) {
+			var element = document.getElementsByClassName(selector);
+			for (var i = 0; i < element.length; i++) {
+				var el = element[i];
+				var truncated = el.innerText;
+				if (truncated.length > maxLength) {
+					truncated = truncated.substr(0,maxLength) + '...';
+				}
+				el.innerText = truncated;
+			}
+		}
     $(window).on("hashchange", function() {
 			listSubUrl = window.location.href.split("/");
       if (listSubUrl[listSubUrl.length - 1].startsWith("#")) {
@@ -114,6 +125,7 @@ AV.lameSkeleton = {
 				}, .3);
 			}
 		});
+		truncateText('nav-item__link__title', 15);
     if (window.matchMedia("(min-width: 768px)").matches) {
       $("section").removeAttr("id");
       new fullScroll({
