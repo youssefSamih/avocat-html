@@ -72,6 +72,9 @@
             height: 96px;
             animation-duration: 3s;
             animation-delay: 1s;
+            @media #{$minHeightScreens} {
+                height: 40px;
+            }
             @media #{$tablet_large} {
                 padding: 0 100px;
             }
@@ -102,6 +105,9 @@
                 &__ic {
                     color: map-get($colors, white);
                     font-size: 80px;
+                    @media #{$minHeightScreens} {
+                        font-size: 40px;
+                    }
                 }
                 &__title{
                     color: map-get($colors, white);
@@ -146,6 +152,11 @@
                     &, &:before{
                         font-size: 15px;
                         line-height: 20px;
+
+                        @media #{$minHeightScreens} {
+                            font-size: 12px;
+                            line-height: 14px;
+                        }
                     }
                     &:before{
                         content: "\2022"; 

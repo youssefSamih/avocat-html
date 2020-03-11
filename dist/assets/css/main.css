@@ -1388,6 +1388,9 @@ select,
           padding: 0 15px; } }
       .lame-presentation__section__details p {
         font-size: 22px; }
+        @media screen and (max-height: 700px) {
+          .lame-presentation__section__details p {
+            font-size: 16px; } }
         @media screen and (max-width: 992px) {
           .lame-presentation__section__details p {
             font-size: 20px; } }
@@ -1406,6 +1409,9 @@ select,
       font-size: 72px;
       font-weight: 500;
       line-height: 128px; }
+      @media screen and (max-height: 700px) {
+        .lame-presentation__section__signature {
+          font-size: 35px; } }
 
 .lame-expertises {
   -webkit-box-orient: vertical;
@@ -1484,6 +1490,9 @@ select,
       animation-duration: 3s;
       -webkit-animation-delay: 1s;
       animation-delay: 1s; }
+      @media screen and (max-height: 700px) {
+        .lame-expertises__section__subTitle {
+          height: 40px; } }
       @media screen and (max-width: 1024px) {
         .lame-expertises__section__subTitle {
           padding: 0 100px; } }
@@ -1520,6 +1529,9 @@ select,
         .lame-expertises__section__content .cols__ic {
           color: #fff;
           font-size: 80px; }
+          @media screen and (max-height: 700px) {
+            .lame-expertises__section__content .cols__ic {
+              font-size: 40px; } }
         .lame-expertises__section__content .cols__title {
           color: #fff;
           height: 108px;
@@ -1574,6 +1586,10 @@ select,
           .lame-expertises__section__content .cols__item, .lame-expertises__section__content .cols__item:before {
             font-size: 15px;
             line-height: 20px; }
+            @media screen and (max-height: 700px) {
+              .lame-expertises__section__content .cols__item, .lame-expertises__section__content .cols__item:before {
+                font-size: 12px;
+                line-height: 14px; } }
           .lame-expertises__section__content .cols__item:before {
             content: "\2022";
             color: #f8094b;

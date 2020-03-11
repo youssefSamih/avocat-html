@@ -123,6 +123,9 @@
             }
             p{
                 font-size: 22px;
+                @media #{$minHeightScreens} {
+                    font-size: 16px;
+                }
                 @media #{$tablet} {
                     font-size: 20px;
                 }
@@ -139,6 +142,9 @@
             font-size: 72px;
             font-weight: 500;
             line-height: 128px;
+            @media #{$minHeightScreens} {
+                font-size: 35px;
+            }
         }
     }
 }
