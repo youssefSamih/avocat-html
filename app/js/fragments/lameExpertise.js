@@ -9,5 +9,6 @@ AV.lameExpertise = {
 				$(".cols").addClass("animated fadeIn");
 			}
 		});
+		// $('.owl-carousel').owlCarousel();
 	}
 };

@@ -7,6 +7,14 @@ AV.lameSkeleton = {
   init: function() {
 		var url = "#0";
 		var listSubUrl = window.location.href.split("/");
+		var objScroll = {
+			sections: "section",
+			mainElement: "main",
+			displayDots: true,
+			dotsPosition: "right",
+			animateTime: 1,
+			animateFunction: "ease"
+		};
 		function scrollToSection(id) {
 			if (window.matchMedia("(max-width: 768px)").matches) {
 				if(url !== id) {
@@ -39,21 +47,18 @@ AV.lameSkeleton = {
 					el.remove();
 				}
 		}
+		function fullPageScroll() {
+			new fullScroll(objScroll);
+		}
 		function forMatchMedia() {
 			if (window.matchMedia("(min-width: 768px)").matches) {
 				$("section").removeAttr("id");
 				removeDotsElement();
-				new fullScroll({
-					sections: "section",
-					mainElement: "main",
-					displayDots: true,
-					dotsPosition: "right",
-					animateTime: 1,
-					animateFunction: "ease"
-				});
+				fullPageScroll();
 			}
 			else if (window.matchMedia("(max-width: 768px)").matches) {
-				removeDotsElement
+				removeDotsElement();
+				window.removeEventListener("wheel", fullPageScroll);
 				$(".link").click(function() {
 					listSubUrl = window.location.href.split("/");
 					if (listSubUrl[listSubUrl.length - 1].startsWith("#")) {

@@ -20,6 +20,9 @@
         @media #{$tablet} {
             padding-top: 50px;
         }
+        @media (max-width: 830px) {
+            padding-top: 0;
+        }
         @media #{$phone} {
             overflow-y: auto;
             overflow-x: hidden;
@@ -50,7 +53,6 @@
                     display: none;
                     cursor: pointer;
                     @media #{$tablet} {
-                        display: block;
                         position: relative;
                         left: 0;
                         margin-right: 74%;
@@ -88,6 +90,13 @@
             padding: 0 99px;
             @media #{$tablet} {
                 padding: 5px;
+                width: 100%;
+            }
+            @media (max-width: 830px) {
+                width: 90%;
+                .cols__title{
+                    padding-bottom: 0;
+                }
             }
             .cols{
                 display: flex;
@@ -131,6 +140,8 @@
                     }
                     @media #{$tablet} {
                         font-size: 100%;
+                        margin: 0;
+                        margin-top: 10px;
                     }
                     @media #{$phone} {
                         margin-top: 10%;

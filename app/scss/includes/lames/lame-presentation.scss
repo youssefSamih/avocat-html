@@ -56,7 +56,6 @@
                     display: none;
                     cursor: pointer;
                     @media #{$tablet} {
-                        display: block;
                         position: relative;
                         left: 0;
                         margin-right: 74%;
@@ -108,7 +107,9 @@
                 margin: 5px;
             }
             @media #{$tablet_large} {
-                padding: 0 100px;
+                padding: 0 22px;
+                font-size: 40px;
+                margin: 0;
             }
             @media #{$minHeightDescktop} {
                 font-size: 60px;

@@ -1065,7 +1065,6 @@ select,
         cursor: pointer; }
         @media screen and (max-width: 992px) {
           .lame-home__section__social__ic.collap {
-            display: block;
             position: relative;
             left: 0;
             margin-right: 70%; } }
@@ -1326,7 +1325,6 @@ select,
         cursor: pointer; }
         @media screen and (max-width: 992px) {
           .lame-presentation__section__social__ic.collap {
-            display: block;
             position: relative;
             left: 0;
             margin-right: 74%; } }
@@ -1376,7 +1374,9 @@ select,
           margin: 5px; } }
       @media screen and (max-width: 1024px) {
         .lame-presentation__section__title {
-          padding: 0 100px; } }
+          padding: 0 22px;
+          font-size: 40px;
+          margin: 0; } }
       @media screen and (max-height: 800px) and (min-width: 1024px) {
         .lame-presentation__section__title {
           font-size: 60px;
@@ -1438,6 +1438,9 @@ select,
     @media screen and (max-width: 992px) {
       .lame-expertises__section {
         padding-top: 50px; } }
+    @media (max-width: 830px) {
+      .lame-expertises__section {
+        padding-top: 0; } }
     @media screen and (max-width: 768px) {
       .lame-expertises__section {
         overflow-y: auto;
@@ -1469,7 +1472,6 @@ select,
         cursor: pointer; }
         @media screen and (max-width: 992px) {
           .lame-expertises__section__social__ic.collap {
-            display: block;
             position: relative;
             left: 0;
             margin-right: 74%; } }
@@ -1506,7 +1508,13 @@ select,
       padding: 0 99px; }
       @media screen and (max-width: 992px) {
         .lame-expertises__section__content {
-          padding: 5px; } }
+          padding: 5px;
+          width: 100%; } }
+      @media (max-width: 830px) {
+        .lame-expertises__section__content {
+          width: 90%; }
+          .lame-expertises__section__content .cols__title {
+            padding-bottom: 0; } }
       .lame-expertises__section__content .cols {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1561,7 +1569,9 @@ select,
               margin-bottom: 80.1px; } }
           @media screen and (max-width: 992px) {
             .lame-expertises__section__content .cols__title {
-              font-size: 100%; } }
+              font-size: 100%;
+              margin: 0;
+              margin-top: 10px; } }
           @media screen and (max-width: 768px) {
             .lame-expertises__section__content .cols__title {
               margin-top: 10%;
@@ -1637,7 +1647,7 @@ select,
         .lame-contact__section__form .icon-icon-menu.collap {
           display: none;
           cursor: pointer; }
-          @media screen and (max-width: 992px) {
+          @media screen and (max-width: 768px) {
             .lame-contact__section__form .icon-icon-menu.collap {
               display: block;
               position: relative;

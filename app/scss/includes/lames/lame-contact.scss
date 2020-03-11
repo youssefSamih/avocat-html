@@ -38,7 +38,7 @@
                 &.collap{
                     display: none;
                     cursor: pointer;
-                    @media #{$tablet} {
+                    @media #{$phone} {
                         display: block;
                         position: relative;
                         left: 0;
