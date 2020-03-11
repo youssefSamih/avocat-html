@@ -627,6 +627,8 @@ a {
       display: -ms-flexbox;
       display: flex;
       width: 95%;
+      -webkit-animation: fadeIn .3s ease-in-out;
+      animation: fadeIn .3s ease-in-out;
       -webkit-transition: opacity 10s ease-in-out;
       transition: opacity 10s ease-in-out;
       opacity: 1; }
@@ -754,6 +756,22 @@ a {
           -ms-flex-pack: center;
           justify-content: center;
           margin-right: 35%; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .btn {
   -webkit-transition: all 0.3s ease-in-out;
