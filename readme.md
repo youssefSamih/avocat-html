@@ -215,4 +215,4 @@ The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
 
 ## Authors
 
-* **Tarik HADDADI**  - *FullStack Javascript Dev* - [YoussefSamih]
+*FullStack Javascript Dev* - [YoussefSamih]
