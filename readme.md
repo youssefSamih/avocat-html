@@ -215,5 +215,4 @@ The ***Dist*** Folder contains all compiled files (HTML, CSS, JS) :
 
 ## Authors
 
-* **Tarik HADDADI**  - *FrontEnd Dev* - [TarikHaddadi](https://git.smile.fr/tahad)
-* **Mossaab KANZIT** - *FrontEnd Dev* - [MossabKanzit](https://git.smile.fr/mokan)
+* **Tarik HADDADI**  - *FullStack Javascript Dev* - [YoussefSamih]
